@@ -7,6 +7,14 @@
     <p>
         <asp:Label ID="Label8" runat="server" Text="Lista de usuarios a gerenciar..."></asp:Label>
     </p>
+    <p>
+        <asp:Label ID="Label15" runat="server" Font-Bold="True" ForeColor="#284E98" Text="Filtrar por estado:  "></asp:Label>
+        <asp:DropDownList ID="ddlEstado" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlEstado_SelectedIndexChanged">
+            <asp:ListItem>Todos</asp:ListItem>
+            <asp:ListItem>Activos</asp:ListItem>
+            <asp:ListItem>Inactivos</asp:ListItem>
+        </asp:DropDownList>
+    </p>
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="#CCCCCC" BorderColor="Yellow" BorderStyle="Double" HorizontalAlign="Center">
         <Columns>
             <asp:BoundField DataField="User" HeaderText="User" />

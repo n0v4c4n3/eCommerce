@@ -12,7 +12,7 @@ public partial class ListaDeUsuarios : System.Web.UI.Page
         if ((bool)Session["Logged"] && ((Usuario.TipoUsuario)Session["Type"] == Usuario.TipoUsuario.Admin ||
             (Usuario.TipoUsuario)Session["Type"] == Usuario.TipoUsuario.Gerente))
         {
-            cargarLista();
+            cargarLista();            
         }
         else
         {
@@ -55,7 +55,7 @@ public partial class ListaDeUsuarios : System.Web.UI.Page
             this.Master.LblMensaje.Text = "El campo no puede estar vacio.";
         }
     }
-     protected void btnInactivar_Click(object sender, EventArgs e)
+    protected void btnInactivar_Click(object sender, EventArgs e)
     {
         string textUsuarioInactivar = this.txtInactivar.Text;
         if (textUsuarioInactivar != "")
@@ -71,7 +71,7 @@ public partial class ListaDeUsuarios : System.Web.UI.Page
                         this.Master.LblMensaje.Text = "Usuario: " + usuarioInactivar.User + " fue inactivado.";
                         cargarLista();
                     }
-                    else 
+                    else
                     {
                         this.Master.LblMensaje.Text = "Usuario: " + usuarioInactivar.User + " ya fue inactivado anteriormente.";
                     }
@@ -95,6 +95,13 @@ public partial class ListaDeUsuarios : System.Web.UI.Page
     {
         List<Usuario> lista = Comercio.Instancia.traerUsuarios();
         this.GridView1.DataSource = lista;
+        this.GridView1.DataBind();
+    }
+    protected void ddlEstado_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        string txtEstado = ddlEstado.SelectedItem.Text;
+        List<Usuario> toBind = Comercio.Instancia.traerUsuariosXEstado(txtEstado);
+        this.GridView1.DataSource = toBind;
         this.GridView1.DataBind();
     }
 }

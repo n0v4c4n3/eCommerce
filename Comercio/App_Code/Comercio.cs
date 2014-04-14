@@ -126,6 +126,26 @@ public class Comercio
             }
         return ProductosXCategoria;
     }
+    public List<Usuario> traerUsuariosXEstado(string pEstado)
+    {
+        List<Usuario> usuariosXEstado = new List<Usuario>();
+        foreach (Usuario unUsu in this.mColUsuarios)
+        {
+            if (pEstado == "Activos" && unUsu.Inactivo == false)
+            {
+                usuariosXEstado.Add(unUsu);
+            }
+            if (pEstado == "Inactivos" && unUsu.Inactivo == true)
+            {
+                usuariosXEstado.Add(unUsu);
+            }
+            if (pEstado == "Todos")
+            {
+                usuariosXEstado.Add(unUsu);
+            }
+        }
+        return usuariosXEstado;
+    }
     public List<Pedido> traerPedidos()
     {
         return this.mColPedidos;
