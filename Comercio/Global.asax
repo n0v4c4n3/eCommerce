@@ -25,7 +25,7 @@
         List<string> dir4 = ("La Dolce Vita 246,Vía Veneto 2358,Peron 34534").Split(',').ToList();
         List<string> dir5 = ("Star 652,Calle No.8 2358,Pereira 5248,Heaven 254").Split(',').ToList();
         List<string> dir6 = ("Uruguay 1950,Brazil 2014,RuffRaff 5248,Vamos 876").Split(',').ToList();
-        List<string> dir7 = ("BSOD 55,49 Street,America 786,Callesita 456").Split(',').ToList();
+        List<string> dir7 = ("BSOD 55,49 Street,America 786,Call 456").Split(',').ToList();
         //Passwords
         string auxPass = StringCipher.Encrypt("1234", "mkJcqDqU");
         //Usuarios
@@ -66,7 +66,7 @@
         Decimal auxMonto1;
         if (Decimal.TryParse("1400", out auxMonto1)) { }
         Decimal auxMonto2;
-        if (Decimal.TryParse("1200", out auxMonto2)) { }
+        if (Decimal.TryParse("9700", out auxMonto2)) { }
         Decimal auxMonto3;
         if (Decimal.TryParse("1800", out auxMonto3)) { }
         //Pedidos        
@@ -74,6 +74,7 @@
         Producto Gato = Comercio.Instancia.buscarProductoXNombreProd("Gato");
         Producto Sushi = Comercio.Instancia.buscarProductoXNombreProd("Sushi");
         Producto Bomba = Comercio.Instancia.buscarProductoXNombreProd("Bomba");
+        Producto Misil = Comercio.Instancia.buscarProductoXNombreProd("Misil");
         List<Producto> paraPedido1 = new List<Producto>();
         paraPedido1.Add(Gatito);
         paraPedido1.Add(Gato);
@@ -81,6 +82,7 @@
         paraPedido2.Add(Sushi);
         paraPedido2.Add(Bomba);
         paraPedido2.Add(Gato);
+        paraPedido2.Add(Misil);
         List<Producto> paraPedido3 = new List<Producto>();
         paraPedido3.Add(Sushi);
         paraPedido3.Add(Bomba);
