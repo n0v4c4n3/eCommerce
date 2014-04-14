@@ -47,7 +47,7 @@ public partial class VentaMenor : System.Web.UI.Page
                     foreach (Pedido unPedido in auxPedidos)
                     {
                         DateTime auxDate = Convert.ToDateTime(unPedido.Fecha);
-                        if (auxDate >= auxFechaInicial && auxDate <= auxFechaTope && unPedido.Cancelado == false) // Entre las fechas y no cancelado.
+                        if (auxDate >= auxFechaInicial && auxDate <= auxFechaTope && unPedido.Cancelado == false && unPedido.Estado == true) // Entre las fechas, no cancelado y enviado.
                         {
                             auxPedidosFiltrados.Add(unPedido);
                         }

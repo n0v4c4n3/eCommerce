@@ -81,7 +81,7 @@ public partial class ListaDePedidos : System.Web.UI.Page
                 }
                 else
                 {
-                    this.Master.LblMensaje.Text = "El codigo: " + auxNum + " esta marcado como pendiente o enviado, no puedes cancelarlo.";
+                    this.Master.LblMensaje.Text = "El codigo: " + auxNum + " esta marcado como enviado, no puedes cancelarlo.";
                 }
             }
             else

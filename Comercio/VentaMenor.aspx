@@ -29,6 +29,8 @@
     <p>
         <asp:Label ID="Label15" runat="server" ForeColor="Red" Text="*El tope de ganancias es para cada producto entre las fechas dadas."></asp:Label>
         <br>
+        <asp:Label ID="Label1" runat="server" ForeColor="Red" Text="*Los productos de un pedido cuentan para  el calculo  solo si este fue enviado."></asp:Label>
+        <br>
         <asp:Label ID="Label16" runat="server" ForeColor="Red" Text="*La lista se desplegara en orden ascendente segun ganancias con un tope."></asp:Label>
     </p>
     <p>

@@ -11,13 +11,13 @@
         Application.UnLock();
 
         Comercio aux = Comercio.Instancia;
-        Usuario.ErroresUsuario resultUsuario;
-        Usuario.ErroresUsuario resultUsuarioBaneado;
+        Usuario.ErroresUsuario resultUsuario;       
         Categoria.ErroresCategoria resultCategoria;
         Producto.ErroresProducto resultProducto;
         int resultPedido1;
         int resultPedido2;
         int resultPedido3;
+        int resultPedido4;
         //Direcciones
         List<string> dir1 = ("Bogota 3480,Rio 852").Split(',').ToList();
         List<string> dir2 = ("Wallstreet 56,St. German 452,Calle No.5").Split(',').ToList();
@@ -79,12 +79,15 @@
         if (Decimal.TryParse("9700", out auxMonto2)) { }
         Decimal auxMonto3;
         if (Decimal.TryParse("1800", out auxMonto3)) { }
+        Decimal auxMonto4;
+        if (Decimal.TryParse("9700", out auxMonto4)) { }
         //Pedidos        
         Producto Gatito = Comercio.Instancia.buscarProductoXNombreProd("Gatito");
         Producto Gato = Comercio.Instancia.buscarProductoXNombreProd("Gato");
         Producto Sushi = Comercio.Instancia.buscarProductoXNombreProd("Sushi");
         Producto Bomba = Comercio.Instancia.buscarProductoXNombreProd("Bomba");
         Producto Misil = Comercio.Instancia.buscarProductoXNombreProd("Misil");
+        Producto Llave = Comercio.Instancia.buscarProductoXNombreProd("Llave");
         List<Producto> paraPedido1 = new List<Producto>();
         paraPedido1.Add(Gatito);
         paraPedido1.Add(Gato);
@@ -98,9 +101,15 @@
         paraPedido3.Add(Bomba);
         paraPedido3.Add(Gato);
         paraPedido3.Add(Gatito);
+        List<Producto> paraPedido4 = new List<Producto>();
+        paraPedido4.Add(Gato);
+        paraPedido4.Add(Misil);
+        paraPedido4.Add(Bomba);
+        paraPedido4.Add(Sushi);
         resultPedido1 = aux.altaPedido(true, paraPedido1, DateTime.Now, "Pereira 1546", auxMonto1);
         resultPedido2 = aux.altaPedido(false, paraPedido2, DateTime.Now, "Artigas 4123", auxMonto2);
-        resultPedido3 = aux.altaPedido(false, paraPedido3, DateTime.Now, "26 De Marzo 4531", auxMonto3);
+        resultPedido3 = aux.altaPedido(true, paraPedido3, DateTime.Now, "26 De Marzo 4531", auxMonto3);
+        resultPedido4 = aux.altaPedido(false, paraPedido4, DateTime.Now, "Rio 852", auxMonto4);
         //Asignar pedidos a usuarios
         Usuario usu1 = Comercio.Instancia.buscarUsuarioXUser("Admin@comercio.com");
         Pedido pedido1 = Comercio.Instancia.buscarPedidoXCodPedido(1);
@@ -109,7 +118,9 @@
         usu1.ColPedidos.Add(pedido2);
         Usuario usu2 = Comercio.Instancia.buscarUsuarioXUser("Cliente@comercio.com");
         Pedido pedido3 = Comercio.Instancia.buscarPedidoXCodPedido(3);
+        Pedido pedido4 = Comercio.Instancia.buscarPedidoXCodPedido(4);
         usu2.ColPedidos.Add(pedido3);
+        usu2.ColPedidos.Add(pedido4);        
     }
 
     void Application_End(object sender, EventArgs e)

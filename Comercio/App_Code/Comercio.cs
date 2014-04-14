@@ -44,12 +44,7 @@ public class Comercio
 
         if (aux == null)
         {
-            Usuario nuevo = new Usuario();
-            nuevo.User = pUser;
-            nuevo.Password = pPassword;
-            nuevo.DireccionFacturacion = pDireccionFacturacion;
-            nuevo.DireccionEnvio = pDireccionEnvio;
-            nuevo.Tipo = pTipo;
+            Usuario nuevo = new Usuario(pUser, pPassword, pDireccionFacturacion, pDireccionEnvio, pTipo);            
             this.mColUsuarios.Add(nuevo);
         }
         else
@@ -68,6 +63,7 @@ public class Comercio
         {
             Producto nuevo = new Producto(pCategoriaProducto, pNombreProd, pStock, pStockMin, pImagen, pPrecio);
             this.mColProductos.Add(nuevo);
+            retorno = Producto.ErroresProducto.OK;
         }
         else
         {
@@ -84,6 +80,7 @@ public class Comercio
         {
             Categoria nueva = new Categoria(pNombreCat);
             this.mColCategorias.Add(nueva);
+            retorno = Categoria.ErroresCategoria.OK;
         }
         else
         {
@@ -93,12 +90,7 @@ public class Comercio
     }
     public int altaPedido(bool pEstado, List<Producto> pColProductos, DateTime pFecha, String pDireccionEnvio, Decimal pMonto)
     {
-        Pedido nuevo = new Pedido(false, pColProductos, pFecha, pDireccionEnvio, pMonto);
-        nuevo.Estado = pEstado;
-        nuevo.ColProductos = pColProductos;
-        nuevo.Fecha = pFecha;
-        nuevo.DireccionEnvio = pDireccionEnvio;
-        nuevo.Monto = pMonto;
+        Pedido nuevo = new Pedido(pEstado, pColProductos, pFecha, pDireccionEnvio, pMonto);        
         this.mColPedidos.Add(nuevo);
         return nuevo.CodPedido;
 
