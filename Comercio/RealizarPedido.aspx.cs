@@ -45,9 +45,8 @@ public partial class RealizarPedido : System.Web.UI.Page
             bool aux = Comercio.Instancia.sacarDelCarrito(textUser, textNombreProd);
             if (aux == true)
             {
-                this.Master.LblMensaje.Text = "Se saco el producto: " + textNombreProd + " del carrito. Refrescando vista del carrito (en User info)...";
+                this.Master.LblMensaje.Text = "Se saco el producto: " + textNombreProd + " del carrito.";
                 cargarGridView();
-                Response.AddHeader("Refresh", "3; URL=RealizarPedido.aspx");
             }
             else
             {
@@ -85,7 +84,18 @@ public partial class RealizarPedido : System.Web.UI.Page
                     List<Producto> auxiliar = new List<Producto>();
                     foreach (Producto unProd in usuarioActivo.Carrito)
                     {
-                        auxiliar.Add(unProd);
+                        if (unProd.StockReal-- >= unProd.StockReal)
+                        {
+                            if (unProd.StockReal > 0)
+                            {
+                                auxiliar.Add(unProd);
+                                unProd.StockReal--;
+                            }
+                        }
+                        else
+                        {
+                            this.Master.LblMensaje.Text = "Alguno de los productos no fueron agregados.";
+                        }
                     }
                     int codigoDeEstePedido = Comercio.Instancia.altaPedido(false, auxiliar, DateTime.Now, direccionSelected, auxMonto);
                     Pedido estePedido = Comercio.Instancia.buscarPedidoXCodPedido(codigoDeEstePedido);

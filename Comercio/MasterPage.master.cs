@@ -51,4 +51,24 @@ public partial class MasterPage : System.Web.UI.MasterPage
         this.lblSessions.Text = Application["Sessions"].ToString();
         this.lblUsers.Text = Application["Loggeds"].ToString();
     }
+    protected void btnVaciar_Click(object sender, EventArgs e)
+    {
+        string usuarioText = Session["User"].ToString();
+        Usuario usuarioActivo = Comercio.Instancia.buscarUsuarioXUser(usuarioText);
+        if (usuarioActivo != null)
+        {
+            foreach (Producto unProd in usuarioActivo.Carrito)
+            {
+                unProd.Stock++;
+                unProd.StockReal++;
+            
+            }
+            usuarioActivo.Carrito.Clear();
+            Response.Redirect(Request.RawUrl);
+        }
+    }
+    protected void btnRefrescar_Click(object sender, EventArgs e)
+    {
+        Response.Redirect(Request.RawUrl);
+    }
 }

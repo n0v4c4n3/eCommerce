@@ -47,7 +47,7 @@ public partial class AltaProducto : System.Web.UI.Page
                     {
                         if (Decimal.TryParse(this.txtPrecio.Text, out auxPrecio))
                         {
-                            Producto.ErroresProducto resultado = Comercio.Instancia.altaProducto(selected, this.txtNombreProd.Text, auxStock, auxStockMin, textImagen, auxPrecio);
+                            Producto.ErroresProducto resultado = Comercio.Instancia.altaProducto(selected, this.txtNombreProd.Text, auxStock, auxStockMin, textImagen, auxPrecio, auxStock);
                             this.Master.LblMensaje.Text = "Se dio de alta al producto.";
                         }
                     }

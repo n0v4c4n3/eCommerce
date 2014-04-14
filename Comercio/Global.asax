@@ -42,19 +42,19 @@
         resultCategoria = aux.altaCategoria("Otros");
         resultCategoria = aux.altaCategoria("Herramientas");
         //Productos
-        resultProducto = aux.altaProducto(aux.buscarCategoriaXNombreCat("Animales"), "Gatito", 3, 2, "Gatito.png", 600);
-        resultProducto = aux.altaProducto(aux.buscarCategoriaXNombreCat("Animales"), "Gato", 4, 3, "Gato.png", 800);
-        resultProducto = aux.altaProducto(aux.buscarCategoriaXNombreCat("Comidas"), "Sushi", 10, 5, "Sushi.png", 180);
-        resultProducto = aux.altaProducto(aux.buscarCategoriaXNombreCat("Comidas"), "Ramen", 20, 10, "Ramen.png", 90);
-        resultProducto = aux.altaProducto(aux.buscarCategoriaXNombreCat("Comidas"), "Onigiri", 10, 20, "Onigiri.png", 30);
-        resultProducto = aux.altaProducto(aux.buscarCategoriaXNombreCat("Armas"), "Bazooka", 5, 6, "Bazooka.png", 6600);
-        resultProducto = aux.altaProducto(aux.buscarCategoriaXNombreCat("Armas"), "Misil", 8, 2, "Misil.png", 8500);
-        resultProducto = aux.altaProducto(aux.buscarCategoriaXNombreCat("Armas"), "Bomba", 20, 4, "Bomba.png", 220);
-        resultProducto = aux.altaProducto(aux.buscarCategoriaXNombreCat("Armas"), "Zombie", 2, 1, "Zombie.png", 220);
-        resultProducto = aux.altaProducto(aux.buscarCategoriaXNombreCat("Animales"), "GatoSinImagen", 6, 2, "", 500);
-        resultProducto = aux.altaProducto(aux.buscarCategoriaXNombreCat("Otros"), "Brazil2014", 9, 1, "Brazil2014.png", 422);
-        resultProducto = aux.altaProducto(aux.buscarCategoriaXNombreCat("Herramientas"), "Martillo", 4, 8, "Martillo.png", 50);
-        resultProducto = aux.altaProducto(aux.buscarCategoriaXNombreCat("Herramientas"), "Llave", 15, 10, "Llave.png", 60);
+        resultProducto = aux.altaProducto(aux.buscarCategoriaXNombreCat("Animales"), "Gatito", 3, 2, "Gatito.png", 600, 3);
+        resultProducto = aux.altaProducto(aux.buscarCategoriaXNombreCat("Animales"), "Gato", 4, 3, "Gato.png", 800, 4);
+        resultProducto = aux.altaProducto(aux.buscarCategoriaXNombreCat("Comidas"), "Sushi", 10, 5, "Sushi.png", 180, 10);
+        resultProducto = aux.altaProducto(aux.buscarCategoriaXNombreCat("Comidas"), "Ramen", 20, 10, "Ramen.png", 90, 20);
+        resultProducto = aux.altaProducto(aux.buscarCategoriaXNombreCat("Comidas"), "Onigiri", 10, 20, "Onigiri.png", 30, 10);
+        resultProducto = aux.altaProducto(aux.buscarCategoriaXNombreCat("Armas"), "Bazooka", 5, 6, "Bazooka.png", 6600, 5);
+        resultProducto = aux.altaProducto(aux.buscarCategoriaXNombreCat("Armas"), "Misil", 8, 2, "Misil.png", 8500, 8);
+        resultProducto = aux.altaProducto(aux.buscarCategoriaXNombreCat("Armas"), "Bomba", 20, 4, "Bomba.png", 220, 20);
+        resultProducto = aux.altaProducto(aux.buscarCategoriaXNombreCat("Armas"), "Zombie", 2, 1, "Zombie.png", 220, 2);
+        resultProducto = aux.altaProducto(aux.buscarCategoriaXNombreCat("Animales"), "GatoSinImagen", 6, 2, "", 500, 6);
+        resultProducto = aux.altaProducto(aux.buscarCategoriaXNombreCat("Otros"), "Brazil2014", 9, 1, "Brazil2014.png", 422, 9);
+        resultProducto = aux.altaProducto(aux.buscarCategoriaXNombreCat("Herramientas"), "Martillo", 4, 8, "Martillo.png", 50, 4);
+        resultProducto = aux.altaProducto(aux.buscarCategoriaXNombreCat("Herramientas"), "Llave", 15, 10, "Llave.png", 60, 15);
         //Monto para pedidos
         Decimal auxMonto1;
         if (Decimal.TryParse("1400", out auxMonto1)) { }

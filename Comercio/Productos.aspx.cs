@@ -12,6 +12,7 @@ public partial class Productos : System.Web.UI.Page
         if (!Page.IsPostBack)
         {
             cargarGridView();
+            cargarCategorias();
         }
         if ((Usuario.TipoUsuario)Session["Type"] == Usuario.TipoUsuario.Visitante)
         {
@@ -31,9 +32,8 @@ public partial class Productos : System.Web.UI.Page
             bool aux = Comercio.Instancia.agregarAlCarrito(textUser, textNombreProd);
             if (aux == true)
             {
-                this.Master.LblMensaje.Text = "Se agrego el producto: " + textNombreProd + " al carrito. Refrescando vista del carrito (en User info)...";
+                this.Master.LblMensaje.Text = "Se agrego el producto: " + textNombreProd + " al carrito.";
                 cargarGridView();
-                Response.AddHeader("Refresh", "3; URL=Productos.aspx");
             }
             else
             {
@@ -45,6 +45,20 @@ public partial class Productos : System.Web.UI.Page
     {
         List<Producto> lista = Comercio.Instancia.traerProductos();
         this.gvProductos.DataSource = lista;
+        this.gvProductos.DataBind();
+    }
+    private void cargarCategorias()
+    {
+        this.ddlCategoria.DataValueField = "NombreCat";
+        this.ddlCategoria.DataTextField = "MostrarToString";
+        this.ddlCategoria.DataSource = Comercio.Instancia.traerCategorias();
+        this.ddlCategoria.DataBind();
+    }
+    protected void ddlCategoria_SelectedIndexChanged1(object sender, EventArgs e)
+    {
+        string txtCategoria = ddlCategoria.SelectedItem.Text;
+        List<Producto> toBind = Comercio.Instancia.traerProductosXCategoria(txtCategoria);
+        this.gvProductos.DataSource = toBind;
         this.gvProductos.DataBind();
     }
 }

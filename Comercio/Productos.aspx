@@ -5,7 +5,12 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="Server">
     <p>
-        <asp:Label ID="Label8" runat="server" Text="Seleccione productos:"></asp:Label>
+        <asp:Label ID="Label8" runat="server" Text="Seleccione los productos para agregar al carrito:"></asp:Label>
+    </p>
+    <p>
+        <asp:Label ID="Label11" runat="server" Font-Bold="True" ForeColor="#284E98" Text="Filtrar por categoria: "></asp:Label>
+        <asp:DropDownList ID="ddlCategoria" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlCategoria_SelectedIndexChanged1">
+        </asp:DropDownList>
     </p>
     <asp:GridView ID="gvProductos" runat="server" AutoGenerateColumns="False" BackColor="#CCCCCC" BorderColor="Yellow" BorderStyle="Double" Font-Bold="False" OnRowCommand="gvProductos_RowCommand">
         <Columns>

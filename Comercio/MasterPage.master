@@ -4,11 +4,17 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Comercio.com</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <style type="text/css">
+        html {
+            /*If you had a black or close to black background*/
+            background-color: #003366;
+        }
+
         body {
+            display: none;
             background-color: #003366;
         }
 
@@ -20,17 +26,17 @@
             background-color: white;
         }
     </style>
-    <script type="text/javascript" src="js/jquery-1.4.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-2.0.2.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             $("body").css("display", "none");
 
-            $("body").fadeIn(500);
+            $("body").fadeIn(195);
 
             $("a.transition").click(function (event) {
                 event.preventDefault();
                 linkLocation = this.href;
-                $("body").fadeOut(500, redirectPage);
+                $("body").fadeOut(195, redirectPage);
             });
 
             function redirectPage() {
@@ -101,11 +107,13 @@
                     <asp:Label ID="Label7" runat="server" Text="Rango: " Font-Bold="True" Font-Italic="False" ForeColor="#284E98"></asp:Label>
                     <asp:Label ID="lblTipoUsuario" runat="server"></asp:Label>
                     <br />
-                    <asp:Label ID="Label6" runat="server" Text="Carrito: " Font-Bold="True" ForeColor="#284E98"></asp:Label>
-                    <asp:Label ID="lblCarrito" runat="server"></asp:Label>
-                    <br />
                     <asp:Label ID="Label10" runat="server" Font-Bold="True" ForeColor="#284E98" Text="Pedidos: "></asp:Label>
                     <asp:Label ID="lblPedidos" runat="server"></asp:Label>
+                    <br />
+                    <asp:Label ID="Label6" runat="server" Text="Carrito: " Font-Bold="True" ForeColor="#284E98"></asp:Label>
+                    <asp:Label ID="lblCarrito" runat="server"></asp:Label>
+                    &nbsp;<asp:Button ID="btnRefrescar" runat="server" Font-Bold="False" Font-Size="7pt" Height="16px" OnClick="btnRefrescar_Click" Text="Refrescar" Width="55px" />
+                    &nbsp;<asp:Button ID="btnVaciar" runat="server" Font-Bold="False" Font-Size="7pt" Height="16px" OnClick="btnVaciar_Click" Text="Vaciar" Width="55px" />
                     <br />
                     <asp:Label ID="Label3" runat="server" BorderColor="#CCCCCC" BorderStyle="Inset" ForeColor="#284E98" Text="Server status" BackColor="#CCCCCC" Font-Bold="True"></asp:Label>
                     <br />

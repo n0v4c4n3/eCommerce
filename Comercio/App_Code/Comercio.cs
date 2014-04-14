@@ -59,14 +59,14 @@ public class Comercio
 
         return retorno;
     }
-    public Producto.ErroresProducto altaProducto(Categoria pCategoriaProducto, string pNombreProd, int pStock, int pStockMin, string pImagen, decimal pPrecio)
+    public Producto.ErroresProducto altaProducto(Categoria pCategoriaProducto, string pNombreProd, int pStock, int pStockMin, string pImagen, decimal pPrecio, int pStockReal)
     {
         Producto aux = this.buscarProductoXNombreProd(pNombreProd);
         Producto.ErroresProducto retorno = Producto.ErroresProducto.OK;
 
         if (aux == null)
         {
-            Producto nuevo = new Producto(pCategoriaProducto, pNombreProd, pStock, pStockMin, pImagen, pPrecio);
+            Producto nuevo = new Producto(pCategoriaProducto, pNombreProd, pStock, pStockMin, pImagen, pPrecio, pStockReal);
             this.mColProductos.Add(nuevo);
         }
         else
@@ -114,6 +114,17 @@ public class Comercio
     public List<Producto> traerProductos()
     {
         return this.mColProductos;
+    }
+    public List<Producto> traerProductosXCategoria(string pCategoria)
+    {
+        Categoria categoria = buscarCategoriaXNombreCat(pCategoria);
+        List<Producto> ProductosXCategoria = new List<Producto>();
+        foreach (Producto unProd in this.mColProductos)
+            if (unProd.CategoriaProducto == categoria)
+            {
+                ProductosXCategoria.Add(unProd);
+            }
+        return ProductosXCategoria;
     }
     public List<Pedido> traerPedidos()
     {
@@ -242,6 +253,7 @@ public class Comercio
             if (pNombreProd == unProd.NombreProd.ToString())
             {
                 unProd.Stock = unProd.Stock + pCantidad;
+                unProd.StockReal = unProd.StockReal + pCantidad;
             }
         }
     }

@@ -15,7 +15,7 @@ public class Producto
     private int mStockMin;
     private string mImagen;
     private Decimal mPrecio;
-
+    private int mStockReal;    
     #endregion
     #region Propiedades
     public Categoria CategoriaProducto
@@ -52,9 +52,14 @@ public class Producto
         }
         set { mImagen = value; }
     }
+    public int StockReal
+    {
+        get { return mStockReal; }
+        set { mStockReal = value; }
+    }
     #endregion
     #region Constructores
-    public Producto(Categoria pCategoriaProducto, string pNombreProd, int pStock, int pStockMin, string pImagen, decimal pPrecio)
+    public Producto(Categoria pCategoriaProducto, string pNombreProd, int pStock, int pStockMin, string pImagen, decimal pPrecio, int pStockReal)
     {
         this.CategoriaProducto = pCategoriaProducto;
         this.NombreProd = pNombreProd;
@@ -62,6 +67,7 @@ public class Producto
         this.StockMin = pStockMin;
         this.Imagen = pImagen;
         this.Precio = pPrecio;
+        this.StockReal = pStockReal;
     }
     #endregion
     #region Metodos
