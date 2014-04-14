@@ -5,7 +5,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="Server">
     <p>
-        <asp:Label ID="Label11" runat="server" Text="Para banear un usuario ingrese lo siguiente:"></asp:Label>
+        <asp:Label ID="Label11" runat="server" Text="Para banear un usuario ingrese lo siguiente..."></asp:Label>
     </p>
     <asp:Label ID="Label1" runat="server" Text="Usuario a banear:" Font-Bold="True" ForeColor="#284E98"></asp:Label>
     &nbsp;<asp:TextBox ID="txtUsuarioABanear" runat="server"></asp:TextBox>

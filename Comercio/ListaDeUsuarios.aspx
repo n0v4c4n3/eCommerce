@@ -5,7 +5,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="Server">
     <p>
-        <asp:Label ID="Label8" runat="server" Text="Lista de usuarios a gerenciar:"></asp:Label>
+        <asp:Label ID="Label8" runat="server" Text="Lista de usuarios a gerenciar..."></asp:Label>
     </p>
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="#CCCCCC" BorderColor="Yellow" BorderStyle="Double" HorizontalAlign="Center">
         <Columns>

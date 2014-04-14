@@ -5,7 +5,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="Server">
     <p>
-        <asp:Label ID="Label8" runat="server" Text="Ingrese sus datos:"></asp:Label>
+        <asp:Label ID="Label8" runat="server" Text="Ingrese sus datos..."></asp:Label>
     </p>
     <div>
         <asp:Label ID="Label1" runat="server" Text="User (email): " Font-Bold="True" ForeColor="#284E98"></asp:Label>

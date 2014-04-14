@@ -5,7 +5,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="Server">
     <p>
-        <asp:Label ID="Label10" runat="server" Text="Para realizar el pedido haga click en confirmar."></asp:Label>
+        <asp:Label ID="Label10" runat="server" Text="Para realizar el pedido haga click en confirmar..."></asp:Label>
     </p>
     <asp:GridView ID="gvProductos" runat="server" AutoGenerateColumns="False" BackColor="#CCCCCC" BorderColor="Yellow" BorderStyle="Double" Font-Bold="False" OnRowCommand="gvProductos_RowCommand">
         <Columns>

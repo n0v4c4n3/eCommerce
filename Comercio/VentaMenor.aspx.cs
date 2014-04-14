@@ -21,17 +21,23 @@ public partial class VentaMenor : System.Web.UI.Page
     }
     protected void btnCalcular_Click(object sender, EventArgs e)
     {
-        string fechaInicial = this.txtFechaInicial.Text;       
+        string fechaInicial = this.txtFechaInicial.Text;
         string fechaTope = this.txtFechaTope.Text;
-        string montoMinimo = this.txtMontoMinimo.Text;
-        Decimal auxDecimalMontoMinimo = new Decimal();
-        if (Decimal.TryParse(fechaTope, out auxDecimalMontoMinimo)) { }
+        string montoTope = this.txtMontoTope.Text;
+        //Convierto a Decimal.
+        Decimal auxDecimalMontoTope = new Decimal();
+        if (Decimal.TryParse(montoTope, out auxDecimalMontoTope)) 
+        { 
+        }
+        else
+        {
+            this.Master.LblMensaje.Text = "Ingrese un monto tope.";
+        }
         List<Pedido> auxPedidos = Comercio.Instancia.traerPedidos();
-        List<Pedido> auxPedidosFiltrados = new List<Pedido>();
-        //Decimal monto = new Decimal();
+        List<Pedido> auxPedidosFiltrados = new List<Pedido>();        
         DateTime auxFechaInicial;
         DateTime auxFechaTope;
-        //Obtener los pedidos en las fechas
+        //Obtener los pedidos en las fechas dadas.
         if (DateTime.TryParse(fechaInicial, out auxFechaInicial))
         {
             if (DateTime.TryParse(fechaTope, out auxFechaTope))
@@ -56,30 +62,39 @@ public partial class VentaMenor : System.Web.UI.Page
         else
         {
             this.Master.LblMensaje.Text = "Fecha inicial invalida.";
-        }
-        //this.lblMonto.Text = monto.ToString();
+        }        
         //Obtener todos los productos de esos pedidos filtrados
         List<Producto> auxProductosFiltrados = new List<Producto>();
-        foreach(Pedido unPedidoFiltrado in auxPedidosFiltrados)
+        foreach (Pedido unPedidoFiltrado in auxPedidosFiltrados)
         {
             foreach (Producto unProducto in unPedidoFiltrado.ColProductos)
             {
                 auxProductosFiltrados.Add(unProducto);
+            }
+        }
+        //Sumo ganancias por cada producto.
+        foreach (Producto unProd2 in auxProductosFiltrados)
+        {
+            unProd2.Ganancias = unProd2.Ganancias + unProd2.Precio;
+        }
+        List<Producto> SinDuplicados = auxProductosFiltrados.Distinct().ToList();
+        List<Producto> enOrden = SinDuplicados.OrderBy(algo => algo.Ganancias).ToList();
+        //Ahora le pongo un tope de ganancias.
+        List<Producto> enOrdenConMinimoDeMonto = new List<Producto>();
+        foreach (Producto unProd4 in enOrden)
+        {
+            if (unProd4.Ganancias <= auxDecimalMontoTope) 
+            {
+                enOrdenConMinimoDeMonto.Add(unProd4);
             }        
         }
-        
-        foreach (Producto unProducto in auxProductosFiltrados)
-        {
-            auxProductosFiltrados.Add(unProducto);
-        }        
-        
-    }
-    private void cargarLista()
-    {
-        List<Producto> lista = Comercio.Instancia.traerProductos();
-        //this.gvProductos.DataSource = auxProductosFiltrados;
+        //Bindear.
+        this.gvProductos.DataSource = enOrdenConMinimoDeMonto;
         this.gvProductos.DataBind();
-    
+        //Limpiar.
+        foreach (Producto unProd3 in enOrden)
+        {
+            unProd3.Ganancias = new Decimal();
+        }
     }
-
 }

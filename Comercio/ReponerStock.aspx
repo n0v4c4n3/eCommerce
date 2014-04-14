@@ -5,9 +5,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="Server">
     <p>
-        <asp:Label ID="Label1" runat="server" Text="Los siguientes productos  necesitan reponer stock:"></asp:Label>
+        <asp:Label ID="Label1" runat="server" Text="Los siguientes productos  necesitan reponer stock..."></asp:Label>
     </p>
-    <asp:GridView ID="gvProductos" runat="server" AutoGenerateColumns="False" BackColor="#CCCCCC" BorderColor="Yellow" BorderStyle="Double" Font-Bold="False" OnRowCommand="gvProductos_RowCommand">
+    <asp:GridView ID="gvProductos" runat="server" AutoGenerateColumns="False" BackColor="#CCCCCC" BorderColor="Yellow" BorderStyle="Double" Font-Bold="False" OnRowCommand="gvProductos_RowCommand" HorizontalAlign="Center">
         <Columns>
             <asp:BoundField DataField="CategoriaProducto" HeaderText="Categoria" />
             <asp:BoundField DataField="NombreProd" HeaderText="Nombre" />

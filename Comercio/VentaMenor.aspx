@@ -8,7 +8,7 @@
     <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
     </asp:ToolkitScriptManager>
     <p>
-        <asp:Label ID="Label11" runat="server" Text="Lista de productos con venta menor que un valor entre dos fechas:"></asp:Label>
+        <asp:Label ID="Label11" runat="server" Text="Lista de productos con venta menor que un valor entre dos fechas..."></asp:Label>
     </p>
     <p>
         <asp:Label ID="Label12" runat="server" Text="Fecha inical: " Font-Bold="True" ForeColor="#284E98"></asp:Label>
@@ -23,16 +23,18 @@
         </asp:CalendarExtender>
     </p>
     <p>
-        <asp:Label ID="Label14" runat="server" Text="Monto minimo: " Font-Bold="True" ForeColor="#284E98"></asp:Label>
-        <asp:TextBox ID="txtMontoMinimo" runat="server"></asp:TextBox>
+        <asp:Label ID="Label14" runat="server" Text="Monto tope: " Font-Bold="True" ForeColor="#284E98"></asp:Label>
+        <asp:TextBox ID="txtMontoTope" runat="server"></asp:TextBox>
     </p>
     <p>
-        <asp:Label ID="Label15" runat="server" ForeColor="Red" Text="*El  monto minimo por producto (ganancias)."></asp:Label>
+        <asp:Label ID="Label15" runat="server" ForeColor="Red" Text="*El  monto tope es para la ganancias generadas por cada producto entre las fechas dadas."></asp:Label>
+    <br>
+        <asp:Label ID="Label16" runat="server" ForeColor="Red" Text="*La lista se desplegara en orden ascendente segun ganancias con un tope."></asp:Label>
     </p>
     <p>
         <asp:Button ID="btnCalcular" runat="server" Text="Calcular" OnClick="btnCalcular_Click" />
     </p>
-    <asp:GridView ID="gvProductos" runat="server" AutoGenerateColumns="False" BackColor="#CCCCCC" BorderColor="Yellow" BorderStyle="Double" Font-Bold="False">
+    <asp:GridView ID="gvProductos" runat="server" AutoGenerateColumns="False" BackColor="#CCCCCC" BorderColor="Yellow" BorderStyle="Double" Font-Bold="False" HorizontalAlign="Center">
         <Columns>
             <asp:BoundField DataField="CategoriaProducto" HeaderText="Categoria" />
             <asp:BoundField DataField="NombreProd" HeaderText="Nombre" />
@@ -42,6 +44,7 @@
                 <ControlStyle Height="80px" Width="80px" />
             </asp:ImageField>
             <asp:BoundField DataField="Precio" HeaderText="Precio $" />
+            <asp:BoundField DataField="Ganancias" HeaderText="Ganancias para fecha" />
         </Columns>
         <HeaderStyle BackColor="Yellow" ForeColor="#284E98" />
     </asp:GridView>

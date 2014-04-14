@@ -7,7 +7,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="Server">
     <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server"></asp:ToolkitScriptManager>
     <p>
-        <asp:Label ID="Label8" runat="server" Text="Ingrese el nombre de categoria que desea crear:"></asp:Label>
+        <asp:Label ID="Label8" runat="server" Text="Ingrese el nombre de categoria que desea crear..."></asp:Label>
     </p>
     <asp:Label ID="Label9" runat="server" Text="Nombre: " Font-Bold="True" ForeColor="#284E98"></asp:Label>
     <asp:TextBox ID="txtNombreCat" runat="server"></asp:TextBox>

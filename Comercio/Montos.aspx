@@ -9,7 +9,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="Server">
     <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" EnableScriptGlobalization="True"></asp:ToolkitScriptManager>
     <p>
-        <asp:Label ID="Label11" runat="server" Text="Monto total entre dos fechas: "></asp:Label>
+        <asp:Label ID="Label11" runat="server" Text="Para calcular el monto total entre dos fechas ingrese..."></asp:Label>
     </p>
     <p>
         <asp:Label ID="Label12" runat="server" Text="Fecha inical: " Font-Bold="True" ForeColor="#284E98"></asp:Label>

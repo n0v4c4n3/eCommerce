@@ -37,7 +37,7 @@
     <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
     </asp:ToolkitScriptManager>
     <p>
-        <asp:Label ID="Label1" runat="server" Text="Ingrese los siguientes datos para dar de alta un producto:"></asp:Label>
+        <asp:Label ID="Label1" runat="server" Text="Ingrese los siguientes datos para dar de alta un producto..."></asp:Label>
     </p>
     <asp:Label ID="Label2" runat="server" Text="Nombre: " Font-Bold="True" ForeColor="#284E98"></asp:Label>
     <asp:TextBox ID="txtNombreProd" runat="server"></asp:TextBox>

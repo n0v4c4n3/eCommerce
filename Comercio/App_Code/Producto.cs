@@ -15,7 +15,7 @@ public class Producto
     private int mStockMin;
     private string mImagen;
     private Decimal mPrecio;
-
+    private Decimal mGanancias;
     #endregion
     #region Propiedades
     public Categoria CategoriaProducto
@@ -51,6 +51,11 @@ public class Producto
             return "Image/" + mImagen;
         }
         set { mImagen = value; }
+    }
+    public Decimal Ganancias
+    {
+        get { return mGanancias; }
+        set { mGanancias = value; }
     }
     #endregion
     #region Constructores

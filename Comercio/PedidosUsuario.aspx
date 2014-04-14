@@ -5,9 +5,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="Server">
     <p>
-        <asp:Label ID="Label11" runat="server" Text="Lista que contiene todos tus pedidos incluyendo los cancelados:"></asp:Label>
+        <asp:Label ID="Label11" runat="server" Text="Lista que contiene todos tus pedidos incluyendo los cancelados..."></asp:Label>
     </p>
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="#CCCCCC" BorderColor="Yellow" BorderStyle="Double">
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="#CCCCCC" BorderColor="Yellow" BorderStyle="Double" HorizontalAlign="Center">
         <Columns>
             <asp:BoundField DataField="CodPedido" HeaderText="Codigo" />
             <asp:BoundField DataField="Fecha" HeaderText="Fecha Pedido" />

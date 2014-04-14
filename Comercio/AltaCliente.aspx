@@ -28,7 +28,7 @@
     <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" EnableScriptGlobalization="True">
     </asp:ToolkitScriptManager>
     <p>
-        <asp:Label ID="Label4" runat="server" Text="Ingresar los siguientes datos:"></asp:Label>
+        <asp:Label ID="Label4" runat="server" Text="Ingresar los siguientes datos para registarse como cliente..."></asp:Label>
     </p>
     <asp:Label ID="Label3" runat="server" Text="User (email): " Font-Bold="True" ForeColor="#284E98"></asp:Label>
     <asp:TextBox ID="txtUser" runat="server"></asp:TextBox>

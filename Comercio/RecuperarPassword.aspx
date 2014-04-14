@@ -5,7 +5,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="Server">
     <p>
-        <asp:Label ID="Label11" runat="server" Text="Para recuperar la password ingrese:"></asp:Label>
+        <asp:Label ID="Label11" runat="server" Text="Formulario para recuperar la password..."></asp:Label>
     </p>
     <p>
         <asp:Label ID="Label1" runat="server" Text="User (email): " Font-Bold="True" ForeColor="#284E98"></asp:Label>
