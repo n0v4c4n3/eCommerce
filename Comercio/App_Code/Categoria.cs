@@ -23,10 +23,12 @@ public class Categoria
 
     }
     #endregion
+    #region Constructores
     public Categoria(string pNombreCat)
     {
         this.NombreCat = pNombreCat;
     }
+    #endregion
     #region Metodos
     public enum ErroresCategoria
     {

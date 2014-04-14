@@ -19,7 +19,7 @@ public class Usuario
     private int mCod;
     private static int mUltCod;
     private bool mInactivo = true;
-    private bool mBan;     
+    private bool mBan;
     #endregion
     #region Propiedades
     public string User
@@ -74,25 +74,24 @@ public class Usuario
         Usuario.mUltCod += 1;
         this.mCod = Usuario.mUltCod;
     }
-
     public Usuario(string pUser, string pPassword, string pDirecionFacturacion, List<String> pDireccionEnvio, Usuario.TipoUsuario pTipo)
         : this()
     {
         this.User = pUser;
         this.Password = pPassword;
         this.DireccionFacturacion = pDirecionFacturacion;
-        this.DireccionEnvio = pDireccionEnvio;              
+        this.DireccionEnvio = pDireccionEnvio;
         this.Tipo = pTipo;
     }
     #endregion
     #region Metodos
     public enum TipoUsuario
     {
-        Admin, 
-        Gerente, 
-        JefeDeDeposito, 
-        Cliente, 
-        Visitante 
+        Admin,
+        Gerente,
+        JefeDeDeposito,
+        Cliente,
+        Visitante
     }
     public enum ErroresUsuario
     {

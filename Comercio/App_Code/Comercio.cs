@@ -44,7 +44,7 @@ public class Comercio
 
         if (aux == null)
         {
-            Usuario nuevo = new Usuario(pUser, pPassword, pDireccionFacturacion, pDireccionEnvio, pTipo);            
+            Usuario nuevo = new Usuario(pUser, pPassword, pDireccionFacturacion, pDireccionEnvio, pTipo);
             this.mColUsuarios.Add(nuevo);
         }
         else
@@ -90,10 +90,9 @@ public class Comercio
     }
     public int altaPedido(bool pEstado, List<Producto> pColProductos, DateTime pFecha, String pDireccionEnvio, Decimal pMonto)
     {
-        Pedido nuevo = new Pedido(pEstado, pColProductos, pFecha, pDireccionEnvio, pMonto);        
+        Pedido nuevo = new Pedido(pEstado, pColProductos, pFecha, pDireccionEnvio, pMonto);
         this.mColPedidos.Add(nuevo);
         return nuevo.CodPedido;
-
     }
     public List<Usuario> traerUsuarios()
     {
@@ -253,7 +252,6 @@ public class Comercio
             {
                 auxProdStockBajo.Add(unProd);
             }
-
         }
         return auxProdStockBajo;
     }
@@ -269,5 +267,4 @@ public class Comercio
         }
     }
     #endregion
-
 }

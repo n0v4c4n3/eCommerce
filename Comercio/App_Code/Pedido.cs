@@ -39,7 +39,6 @@ public class Pedido
         get { return mColProductos; }
         set { mColProductos = value; }
     }
-    
     public DateTime Fecha
     {
         get { return mFecha; }
@@ -84,5 +83,4 @@ public class Pedido
         Error
     }
     #endregion
-
 }

@@ -70,7 +70,6 @@ public class Producto
     }
     #endregion
     #region Metodos
-
     public override string ToString()
     {
         return this.NombreProd;

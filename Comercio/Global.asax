@@ -23,9 +23,8 @@
         List<string> dir2 = ("Wallstreet 56,St. German 452,Calle No.5").Split(',').ToList();
         List<string> dir3 = ("Roxlo 1246,Indio Solari 65,Ricota 32").Split(',').ToList();
         List<string> dir4 = ("La Dolce Vita 246,Vía Veneto 2358,Peron 34534").Split(',').ToList();
-        List<string> dir5 = ("Star 652,Calle No.8 2358,Pereira 5248,Heaven 254").Split(',').ToList();
-        List<string> dir6 = ("Uruguay 1950,Brazil 2014,RuffRaff 5248,Vamos 876").Split(',').ToList();
-        List<string> dir7 = ("BSOD 55,49 Street,America 786,Call 456").Split(',').ToList();
+        List<string> dir5 = ("Uruguay 1950,Brazil 2014,RuffRaff 5248,Vamos 876").Split(',').ToList();
+        List<string> dir6 = ("BSOD 55,49 Street,America 786,Call 456").Split(',').ToList();
         //Passwords
         string auxPass = StringCipher.Encrypt("1234", "mkJcqDqU");
         //Usuarios
@@ -33,9 +32,8 @@
         resultUsuario = aux.altaUsuario("JefeDeDeposito@comercio.com", auxPass, "18 De Julio 5112", dir2, Usuario.TipoUsuario.JefeDeDeposito);
         resultUsuario = aux.altaUsuario("Gerente@comercio.com", auxPass, "Pereira 1546", dir3, Usuario.TipoUsuario.Gerente);
         resultUsuario = aux.altaUsuario("Admin@comercio.com", auxPass, "Street 1818", dir4, Usuario.TipoUsuario.Admin);
-        resultUsuario = aux.altaUsuario("Visitante@comercio.com", auxPass, "Artigas 4123", dir5, Usuario.TipoUsuario.Visitante); // No hace nada.
-        resultUsuario = aux.altaUsuario("Inactivo@comercio.com", auxPass, "Bogota 4453", dir6, Usuario.TipoUsuario.Cliente);
-        resultUsuario = aux.altaUsuario("Baneado@comercio.com", auxPass, "Infierno 153", dir7, Usuario.TipoUsuario.Cliente); // Activo pero baneado.
+        resultUsuario = aux.altaUsuario("Inactivo@comercio.com", auxPass, "Bogota 4453", dir5, Usuario.TipoUsuario.Cliente);
+        resultUsuario = aux.altaUsuario("Baneado@comercio.com", auxPass, "Infierno 153", dir6, Usuario.TipoUsuario.Cliente); // Activo pero baneado.
         //Usuarios activos
         Usuario activarCliente = Comercio.Instancia.buscarUsuarioXUser("Cliente@comercio.com");
         activarCliente.Inactivo = false;
@@ -45,8 +43,6 @@
         activarGerente.Inactivo = false;
         Usuario activarAdmin = Comercio.Instancia.buscarUsuarioXUser("Admin@comercio.com");
         activarAdmin.Inactivo = false;
-        Usuario activarVisitante = Comercio.Instancia.buscarUsuarioXUser("Visitante@comercio.com");
-        activarVisitante.Inactivo = false;
         Usuario activarBaneado = Comercio.Instancia.buscarUsuarioXUser("Baneado@comercio.com");
         activarBaneado.Inactivo = false;
         //Baneados

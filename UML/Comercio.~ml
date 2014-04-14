@@ -222,14 +222,14 @@
 <XPD:ATTR name="Alpha" type="real">0.523598775598299</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">25</XPD:ATTR>
 <XPD:ATTR name="EdgePosition" type="EdgePositionKind">epHead</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">1</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">*</XPD:ATTR>
 <XPD:REF name="Model">FyXUUN+IDUW9MF+22F2tTgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="TailMultiplicityLabel" type="EdgeLabelView" guid="bjGyb+8S40KBd4qhsFGW+gAA">
 <XPD:ATTR name="Alpha" type="real">-0.523598775598299</XPD:ATTR>
 <XPD:ATTR name="Distance" type="real">25</XPD:ATTR>
 <XPD:ATTR name="EdgePosition" type="EdgePositionKind">epTail</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">*</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">1</XPD:ATTR>
 <XPD:REF name="Model">o0+iBECtB0qaX3tbhoySjQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="HeadPropertyLabel" type="EdgeLabelView" guid="vzFWGl5+uEqoW0qtDrJRHAAA">
@@ -1116,7 +1116,6 @@
 </XPD:OBJ>
 <XPD:OBJ name="Operations[10]" type="UMLOperation" guid="UPJU5wMek0GkWDnfoWLLqgAA">
 <XPD:ATTR name="Name" type="string">comercio</XPD:ATTR>
-<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
 <XPD:REF name="Owner">FrZjvjJrZ0ytQPf994iR5AAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Operations[11]" type="UMLOperation" guid="s/ESrwkENE+3Zwv7gAG5eQAA">
@@ -1736,7 +1735,7 @@
 <XPD:ATTR name="#Connections" type="integer">2</XPD:ATTR>
 <XPD:OBJ name="Connections[0]" type="UMLAssociationEnd" guid="o0+iBECtB0qaX3tbhoySjQAA">
 <XPD:ATTR name="IsNavigable" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Multiplicity" type="string">*</XPD:ATTR>
+<XPD:ATTR name="Multiplicity" type="string">1</XPD:ATTR>
 <XPD:REF name="Association">r/4+tFExlUq/t6XhMlYOzQAA</XPD:REF>
 <XPD:REF name="Participant">lkvGPZbV20iQ6pUbiHzYTgAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
@@ -1746,7 +1745,7 @@
 <XPD:REF name="Views[3]">bhZoi2GR2kOMyiMuclerzQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Connections[1]" type="UMLAssociationEnd" guid="FyXUUN+IDUW9MF+22F2tTgAA">
-<XPD:ATTR name="Multiplicity" type="string">1</XPD:ATTR>
+<XPD:ATTR name="Multiplicity" type="string">*</XPD:ATTR>
 <XPD:REF name="Association">r/4+tFExlUq/t6XhMlYOzQAA</XPD:REF>
 <XPD:REF name="Participant">cBJHZOo3hEyBVpW01tEZkQAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
@@ -1872,6 +1871,7 @@
 <XPD:ATTR name="#Connections" type="integer">2</XPD:ATTR>
 <XPD:OBJ name="Connections[0]" type="UMLAssociationEnd" guid="a+O34SjbeEW/MHtInKaWsQAA">
 <XPD:ATTR name="IsNavigable" type="boolean">False</XPD:ATTR>
+<XPD:ATTR name="Aggregation" type="UMLAggregationKind">akAggregate</XPD:ATTR>
 <XPD:REF name="Association">9ZUsPIMq6Eu7z9asuC88OwAA</XPD:REF>
 <XPD:REF name="Participant">FrZjvjJrZ0ytQPf994iR5AAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
@@ -1930,6 +1930,7 @@
 <XPD:ATTR name="#Connections" type="integer">2</XPD:ATTR>
 <XPD:OBJ name="Connections[0]" type="UMLAssociationEnd" guid="c5FpuGzFFEOnhPhnSAhp5wAA">
 <XPD:ATTR name="IsNavigable" type="boolean">False</XPD:ATTR>
+<XPD:ATTR name="Aggregation" type="UMLAggregationKind">akAggregate</XPD:ATTR>
 <XPD:REF name="Association">BY/vboc13kCNeon5djbrbAAA</XPD:REF>
 <XPD:REF name="Participant">FrZjvjJrZ0ytQPf994iR5AAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
@@ -1959,6 +1960,7 @@
 <XPD:ATTR name="#Connections" type="integer">2</XPD:ATTR>
 <XPD:OBJ name="Connections[0]" type="UMLAssociationEnd" guid="X9lbhtj9XkSHYMz3iT95PQAA">
 <XPD:ATTR name="IsNavigable" type="boolean">False</XPD:ATTR>
+<XPD:ATTR name="Aggregation" type="UMLAggregationKind">akAggregate</XPD:ATTR>
 <XPD:REF name="Association">7bVA1auSwkqcqNWjwSktbAAA</XPD:REF>
 <XPD:REF name="Participant">FrZjvjJrZ0ytQPf994iR5AAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
@@ -2048,8 +2050,8 @@
 <XPD:REF name="Participant">lkvGPZbV20iQ6pUbiHzYTgAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">X+MYVyVmVUG1t7FvtZVOwQAA</XPD:REF>
-<XPD:REF name="Views[1]">r8MDHi61fUC75bfpuseBHwAA</XPD:REF>
-<XPD:REF name="Views[2]">+4rKgCdzUEyVUA3qCpZjswAA</XPD:REF>
+<XPD:REF name="Views[1]">+4rKgCdzUEyVUA3qCpZjswAA</XPD:REF>
+<XPD:REF name="Views[2]">r8MDHi61fUC75bfpuseBHwAA</XPD:REF>
 <XPD:REF name="Views[3]">4CNP05D4KUe7a007hRu0ZAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Connections[1]" type="UMLAssociationEnd" guid="7AvfaIneXEKPx9/8UZxnKgAA">
@@ -2058,8 +2060,8 @@
 <XPD:REF name="Participant">oXsxlbNnRkWNnBY2GBO9oAAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">STetcEgDM0mwxsUhYOMkaQAA</XPD:REF>
-<XPD:REF name="Views[1]">a3Vq1bb2bk+KGcQiPfwvSAAA</XPD:REF>
-<XPD:REF name="Views[2]">7JR0cCnvNkmZeK6DqH3vOwAA</XPD:REF>
+<XPD:REF name="Views[1]">7JR0cCnvNkmZeK6DqH3vOwAA</XPD:REF>
+<XPD:REF name="Views[2]">a3Vq1bb2bk+KGcQiPfwvSAAA</XPD:REF>
 <XPD:REF name="Views[3]">ah7znXmMj0GRb//5eqtF0QAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>

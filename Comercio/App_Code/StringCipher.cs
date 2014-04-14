@@ -11,7 +11,6 @@ using System.IO;
 /// </summary>
 public static class StringCipher
 {
-    // EXPLICACION!
     // Esta constante string es usada como un valor "salt" para la funcion "PasswordDeriveBytes".
     // Este tamanio de la IV (en bytes) tiene que ser = (keysize / 8). El valor de la keysize por defecto es 256, por lo tanto el IV debe ser de
     // 32 bytes de largo. Usando un string de 16 caracteres de largo que dara 32 bytes cuando sea convertido a byte array.
@@ -19,7 +18,7 @@ public static class StringCipher
 
     // Esta constante es usada para determinar el keysize del algoritmo de encriptacion.
     private const int keysize = 256;
-    
+
     // La siguiente funcion sera usada para el login y el registo.
     // Igualando el valor encriptados a la password encriptada almacenada en Usuario "Password".
     public static string Encrypt(string plainText, string passPhrase)
