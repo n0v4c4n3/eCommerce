@@ -37,10 +37,13 @@ public partial class Montos : System.Web.UI.Page
                 {
                     foreach (Pedido unPedido in auxPedidos)
                     {
-                        DateTime auxDate = Convert.ToDateTime(unPedido.Fecha);
-                        if (auxDate >= auxFechaInicial && auxDate <= auxFechaTope)
+                        if (unPedido.Estado == true && unPedido.Cancelado == false) //No calculo si el pedido no fue enviado o si esta cancelado.
                         {
-                            monto = monto + unPedido.Monto;
+                            DateTime auxDate = Convert.ToDateTime(unPedido.Fecha);
+                            if (auxDate >= auxFechaInicial && auxDate <= auxFechaTope)
+                            {
+                                monto = monto + unPedido.Monto;
+                            }
                         }
                     }
                 }

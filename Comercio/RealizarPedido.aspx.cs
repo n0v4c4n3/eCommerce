@@ -84,18 +84,7 @@ public partial class RealizarPedido : System.Web.UI.Page
                     List<Producto> auxiliar = new List<Producto>();
                     foreach (Producto unProd in usuarioActivo.Carrito)
                     {
-                        if (unProd.StockReal-- >= unProd.StockReal)
-                        {
-                            if (unProd.StockReal > 0)
-                            {
-                                auxiliar.Add(unProd);
-                                unProd.StockReal--;
-                            }
-                        }
-                        else
-                        {
-                            this.Master.LblMensaje.Text = "Alguno de los productos no fueron agregados.";
-                        }
+                        auxiliar.Add(unProd);
                     }
                     int codigoDeEstePedido = Comercio.Instancia.altaPedido(false, auxiliar, DateTime.Now, direccionSelected, auxMonto);
                     Pedido estePedido = Comercio.Instancia.buscarPedidoXCodPedido(codigoDeEstePedido);

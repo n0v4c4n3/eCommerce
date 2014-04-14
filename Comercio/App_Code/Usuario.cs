@@ -20,8 +20,7 @@ public class Usuario
     private int mCod;
     private static int mUltCod;
     private bool mInactivo;
-
-
+    private bool mBan;     
     #endregion
     #region Propiedades
     public string User
@@ -68,6 +67,11 @@ public class Usuario
     {
         get { return mInactivo; }
         set { mInactivo = value; }
+    }
+    public bool Ban
+    {
+        get { return mBan; }
+        set { mBan = value; }
     }
     #endregion
     #region Constructores

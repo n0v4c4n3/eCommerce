@@ -48,4 +48,18 @@ public partial class ReponerStock : System.Web.UI.Page
         this.gvProductos.DataSource = listaStockBajo;
         this.gvProductos.DataBind();
     }
+    protected void btnVaciarTodo_Click(object sender, EventArgs e)
+    {
+        List<Usuario> todos = Comercio.Instancia.traerUsuarios();
+        foreach (Usuario unUsu in todos)
+        {
+            foreach (Producto unProd in unUsu.Carrito)
+            {
+                unProd.Stock++;
+
+            }
+            unUsu.Carrito.Clear();
+            this.Master.LblMensaje.Text = "Se vaciaron todos los carritos";
+        }
+    }
 }

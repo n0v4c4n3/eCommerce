@@ -59,14 +59,14 @@ public class Comercio
 
         return retorno;
     }
-    public Producto.ErroresProducto altaProducto(Categoria pCategoriaProducto, string pNombreProd, int pStock, int pStockMin, string pImagen, decimal pPrecio, int pStockReal)
+    public Producto.ErroresProducto altaProducto(Categoria pCategoriaProducto, string pNombreProd, int pStock, int pStockMin, string pImagen, decimal pPrecio)
     {
         Producto aux = this.buscarProductoXNombreProd(pNombreProd);
         Producto.ErroresProducto retorno = Producto.ErroresProducto.OK;
 
         if (aux == null)
         {
-            Producto nuevo = new Producto(pCategoriaProducto, pNombreProd, pStock, pStockMin, pImagen, pPrecio, pStockReal);
+            Producto nuevo = new Producto(pCategoriaProducto, pNombreProd, pStock, pStockMin, pImagen, pPrecio);
             this.mColProductos.Add(nuevo);
         }
         else
@@ -253,7 +253,6 @@ public class Comercio
             if (pNombreProd == unProd.NombreProd.ToString())
             {
                 unProd.Stock = unProd.Stock + pCantidad;
-                unProd.StockReal = unProd.StockReal + pCantidad;
             }
         }
     }

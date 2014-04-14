@@ -57,12 +57,6 @@ public partial class MasterPage : System.Web.UI.MasterPage
         Usuario usuarioActivo = Comercio.Instancia.buscarUsuarioXUser(usuarioText);
         if (usuarioActivo != null)
         {
-            foreach (Producto unProd in usuarioActivo.Carrito)
-            {
-                unProd.Stock++;
-                unProd.StockReal++;
-            
-            }
             usuarioActivo.Carrito.Clear();
             Response.Redirect(Request.RawUrl);
         }

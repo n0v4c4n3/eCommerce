@@ -20,7 +20,7 @@
 
         #wrapper {
             position: relative;
-            width: 840px;
+            width: 850px;
             min-height: 0 auto;
             margin: auto;
             background-color: white;
@@ -31,12 +31,12 @@
         $(document).ready(function () {
             $("body").css("display", "none");
 
-            $("body").fadeIn(195);
+            $("body").fadeIn(220);
 
             $("a.transition").click(function (event) {
                 event.preventDefault();
                 linkLocation = this.href;
-                $("body").fadeOut(195, redirectPage);
+                $("body").fadeOut(220, redirectPage);
             });
 
             function redirectPage() {
@@ -64,10 +64,13 @@
                                 <asp:MenuItem NavigateUrl="~/Productos.aspx" Text="Agregar productos" Value="Agregar productos"></asp:MenuItem>
                                 <asp:MenuItem Text="Realizar pedido" Value="Realizar pedido" NavigateUrl="~/RealizarPedido.aspx"></asp:MenuItem>
                                 <asp:MenuItem Text="Recomendaciones" Value="Recomendaciones" NavigateUrl="~/Recomendaciones.aspx"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/PedidosUsuario.aspx" Text="Mis pedidos" Value="Mis pedidos"></asp:MenuItem>
                             </asp:MenuItem>
                             <asp:MenuItem Text="| Tareas (Admin)" Value="Tareas (Admin)">
-                                <asp:MenuItem NavigateUrl="~/AltaCategoria.aspx" Text="Alta Categoria" Value="Alta Categoria"></asp:MenuItem>
-                                <asp:MenuItem NavigateUrl="~/AltaProducto.aspx" Text="Alta Producto" Value="Alta Producto"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/AltaCategoria.aspx" Text="Alta categoria" Value="Alta categoria"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/AltaProducto.aspx" Text="Alta producto" Value="Alta producto"></asp:MenuItem>
+                                <asp:MenuItem Text="Banear usuario" Value="Banear usuario" NavigateUrl="~/BanearUsuario.aspx"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/DesbanearUsuario.aspx" Text="Desbanear usuario" Value="Desbanear usuario"></asp:MenuItem>
                             </asp:MenuItem>
                             <asp:MenuItem Text="| Tareas (Gerente)" Value="Tareas (Gerente)">
                                 <asp:MenuItem NavigateUrl="~/ListaDeUsuarios.aspx" Text="Lista de usuarios" Value="Lista de usuarios "></asp:MenuItem>
@@ -78,8 +81,8 @@
                                 <asp:MenuItem Text="Reponer stock" Value="Reponer stock" NavigateUrl="~/ReponerStock.aspx"></asp:MenuItem>
                                 <asp:MenuItem NavigateUrl="~/ListaDePedidos.aspx" Text="Listado de pedidos" Value="Listado de pedidos"></asp:MenuItem>
                             </asp:MenuItem>
-                            <asp:MenuItem Text="| Log In" Value="Log In" NavigateUrl="~/LogIn.aspx"></asp:MenuItem>
-                            <asp:MenuItem NavigateUrl="~/LogOut.aspx" Text="| Log Out " Value="Log Out "></asp:MenuItem>
+                            <asp:MenuItem Text="| Log in" Value="Log in" NavigateUrl="~/LogIn.aspx"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/LogOut.aspx" Text="| Log out " Value="Log out "></asp:MenuItem>
                         </Items>
                         <StaticHoverStyle BackColor="#284E98" ForeColor="White" />
                         <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />

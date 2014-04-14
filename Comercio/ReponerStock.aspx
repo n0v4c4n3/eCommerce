@@ -30,6 +30,12 @@
         </Columns>
         <HeaderStyle BackColor="Yellow" ForeColor="#284E98" />
     </asp:GridView>
-    <p></p>
+    <p>
+        <asp:Label ID="Label12" runat="server" Font-Bold="True" ForeColor="#284E98" Text="Forzar vaciado de todos los carritos: "></asp:Label>
+        <asp:Button ID="btnVaciarTodo" runat="server" Text="Vaciar" OnClick="btnVaciarTodo_Click" />
+    </p>
+    <p>
+        <asp:Label ID="Label11" runat="server" ForeColor="Red" Text="*Usarlo solo si es necesario."></asp:Label>
+    </p>
 </asp:Content>
 

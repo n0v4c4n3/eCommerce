@@ -7,13 +7,14 @@
     <p>
         <asp:Label ID="Label8" runat="server" Text="Lista de usuarios a gerenciar:"></asp:Label>
     </p>
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="#CCCCCC" BorderColor="Yellow" BorderStyle="Double">
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" BackColor="#CCCCCC" BorderColor="Yellow" BorderStyle="Double" HorizontalAlign="Center">
         <Columns>
             <asp:BoundField DataField="User" HeaderText="User" />
             <asp:BoundField DataField="Tipo" HeaderText="Rango" />
             <asp:BoundField DataField="Password" HeaderText="Password" />
             <asp:BoundField DataField="DireccionFacturacion" HeaderText="Dir. Facturacion" />
             <asp:CheckBoxField DataField="Inactivo" Text="Inactivo" />
+            <asp:CheckBoxField DataField="Ban" Text="Baneado" />
             <asp:TemplateField HeaderText="Dir. Envio">
                 <ItemTemplate>
                     <asp:BulletedList ID="BulletedList1" runat="server" DataSource='<%# Eval("DireccionEnvio") %>'></asp:BulletedList>
