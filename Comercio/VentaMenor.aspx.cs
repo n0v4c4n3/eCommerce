@@ -23,10 +23,10 @@ public partial class VentaMenor : System.Web.UI.Page
     {
         string fechaInicial = this.txtFechaInicial.Text;
         string fechaTope = this.txtFechaTope.Text;
-        string montoTope = this.txtMontoTope.Text;
-        //Convierto a Decimal.
+        string TopeGanancias = this.txtTopeGanancias.Text;
+        // Convierto a Decimal.
         Decimal auxDecimalMontoTope = new Decimal();
-        if (Decimal.TryParse(montoTope, out auxDecimalMontoTope)) 
+        if (Decimal.TryParse(TopeGanancias, out auxDecimalMontoTope)) 
         { 
         }
         else
@@ -37,7 +37,7 @@ public partial class VentaMenor : System.Web.UI.Page
         List<Pedido> auxPedidosFiltrados = new List<Pedido>();        
         DateTime auxFechaInicial;
         DateTime auxFechaTope;
-        //Obtener los pedidos en las fechas dadas.
+        // Obtener los pedidos en las fechas dadas.
         if (DateTime.TryParse(fechaInicial, out auxFechaInicial))
         {
             if (DateTime.TryParse(fechaTope, out auxFechaTope))
@@ -47,7 +47,7 @@ public partial class VentaMenor : System.Web.UI.Page
                     foreach (Pedido unPedido in auxPedidos)
                     {
                         DateTime auxDate = Convert.ToDateTime(unPedido.Fecha);
-                        if (auxDate >= auxFechaInicial && auxDate <= auxFechaTope)
+                        if (auxDate >= auxFechaInicial && auxDate <= auxFechaTope && unPedido.Cancelado == false) // Entre las fechas y no cancelado.
                         {
                             auxPedidosFiltrados.Add(unPedido);
                         }
@@ -63,7 +63,7 @@ public partial class VentaMenor : System.Web.UI.Page
         {
             this.Master.LblMensaje.Text = "Fecha inicial invalida.";
         }        
-        //Obtener todos los productos de esos pedidos filtrados
+        // Obtener todos los productos de esos pedidos filtrados
         List<Producto> auxProductosFiltrados = new List<Producto>();
         foreach (Pedido unPedidoFiltrado in auxPedidosFiltrados)
         {
@@ -72,26 +72,26 @@ public partial class VentaMenor : System.Web.UI.Page
                 auxProductosFiltrados.Add(unProducto);
             }
         }
-        //Sumo ganancias por cada producto.
+        // Sumo ganancias por cada producto.
         foreach (Producto unProd2 in auxProductosFiltrados)
         {
             unProd2.Ganancias = unProd2.Ganancias + unProd2.Precio;
         }
         List<Producto> SinDuplicados = auxProductosFiltrados.Distinct().ToList();
         List<Producto> enOrden = SinDuplicados.OrderBy(algo => algo.Ganancias).ToList();
-        //Ahora le pongo un tope de ganancias.
-        List<Producto> enOrdenConMinimoDeMonto = new List<Producto>();
+        // Ahora le pongo un tope de ganancias.
+        List<Producto> enOrdenConTopeDeMonto = new List<Producto>();
         foreach (Producto unProd4 in enOrden)
         {
             if (unProd4.Ganancias <= auxDecimalMontoTope) 
             {
-                enOrdenConMinimoDeMonto.Add(unProd4);
+                enOrdenConTopeDeMonto.Add(unProd4);
             }        
         }
-        //Bindear.
-        this.gvProductos.DataSource = enOrdenConMinimoDeMonto;
+        // Bindear.
+        this.gvProductos.DataSource = enOrdenConTopeDeMonto;
         this.gvProductos.DataBind();
-        //Limpiar.
+        // Limpiar.
         foreach (Producto unProd3 in enOrden)
         {
             unProd3.Ganancias = new Decimal();

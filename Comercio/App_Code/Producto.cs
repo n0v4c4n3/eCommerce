@@ -10,7 +10,7 @@ public class Producto
 {
     #region Atributos
     private Categoria mCategoriaProducto;
-    private string mNombreProd; //Identifica al producto
+    private string mNombreProd; // Identifica al producto
     private int mStock;
     private int mStockMin;
     private string mImagen;

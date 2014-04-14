@@ -11,14 +11,17 @@ using System.IO;
 /// </summary>
 public static class StringCipher
 {
-    // This constant string is used as a "salt" value for the PasswordDeriveBytes function calls.
-    // This size of the IV (in bytes) must = (keysize / 8).  Default keysize is 256, so the IV must be
-    // 32 bytes long.  Using a 16 character string here gives us 32 bytes when converted to a byte array.
-    private const string initVector = "tu89geji340t89u2";
+    // EXPLICACION!
+    // Esta constante string es usada como un valor "salt" para la funcion "PasswordDeriveBytes".
+    // Este tamanio de la IV (en bytes) tiene que ser = (keysize / 8). El valor de la keysize por defecto es 256, por lo tanto el IV debe ser de
+    // 32 bytes de largo. Usando un string de 16 caracteres de largo que dara 32 bytes cuando sea convertido a byte array.
+    private const string initVector = "as85xej0340a25i9";
 
-    // This constant is used to determine the keysize of the encryption algorithm.
+    // Esta constante es usada para determinar el keysize del algoritmo de encriptacion.
     private const int keysize = 256;
-
+    
+    // La siguiente funcion sera usada para el login y el registo.
+    // Igualando el valor encriptados a la password encriptada almacenada en Usuario "Password".
     public static string Encrypt(string plainText, string passPhrase)
     {
         byte[] initVectorBytes = Encoding.UTF8.GetBytes(initVector);
@@ -38,6 +41,7 @@ public static class StringCipher
         return Convert.ToBase64String(cipherTextBytes);
     }
 
+    // La siguiente funcion sera utilizada para desencriptar la password almacenada. En recuperar password.
     public static string Decrypt(string cipherText, string passPhrase)
     {
         byte[] initVectorBytes = Encoding.ASCII.GetBytes(initVector);

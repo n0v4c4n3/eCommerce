@@ -83,12 +83,12 @@ public partial class Recomendaciones : System.Web.UI.Page
     }
     private void cargarGridView()
     {
-        //Obtengo usuario.
+        // Obtengo usuario.
         string usuarioText = Session["User"].ToString();
         Usuario usuarioActivo = Comercio.Instancia.buscarUsuarioXUser(usuarioText);
-        //Obtengo categorias.
+        // Obtengo categorias.
         List<Categoria> auxCategorias = Comercio.Instancia.traerCategorias();
-        //Por cada pedido del usuario veo sus productos y agrego sus categorias.
+        // Por cada pedido del usuario veo sus productos y agrego sus categorias.
         List<Categoria> auxAContar = new List<Categoria>();
         if (usuarioActivo != null)
         {
@@ -101,18 +101,18 @@ public partial class Recomendaciones : System.Web.UI.Page
                 }
             }
         }
-        //Agrupo las categorias segun nombre, despues ordeno descendente la cantidad de veces que aparecen y selecciono todas.
+        // Agrupo las categorias segun nombre, despues ordeno descendente la cantidad de veces que aparecen y selecciono todas.
         List<Categoria> ordenada = auxAContar.GroupBy(x => x.NombreCat)
                   .OrderByDescending(g => g.Count())
                   .SelectMany(g => g).ToList();
-        //Remuevo los duplicados.
+        // Remuevo los duplicados.
         List<Categoria> SinDuplicados = ordenada.Distinct().ToList();
-        //Obtengo la cantidad de elementos en el array para evitar errores.
+        // Obtengo la cantidad de elementos en el array para evitar errores.
         int cantidadElementos = SinDuplicados.Count();
-        //Asigno las tres primeras posiciones si existen. Anidando 'if' para tirar los errores correctos a la master.       
+        // Asigno las tres primeras posiciones si existen. Anidando 'if' para tirar los errores correctos a la master.       
         if (cantidadElementos >= 1)
         {
-            //Creo las listas de productos para mostrar al usuario.
+            // Creo las listas de productos para mostrar al usuario.
             Categoria uno = SinDuplicados[0];
             List<Producto> paraCategoriaUno = new List<Producto>();
             foreach (Producto unProd in Comercio.Instancia.traerProductos())
@@ -122,12 +122,12 @@ public partial class Recomendaciones : System.Web.UI.Page
                     paraCategoriaUno.Add(unProd);
                 }
             }
-            //Bindeo las listas de productos obtenidas.
+            // Bindeo las listas de productos obtenidas.
             this.gvProductos.DataSource = paraCategoriaUno;
             this.gvProductos.DataBind();
             if (cantidadElementos >= 2)
             {
-                //Creo las listas de productos para mostrar al usuario.
+                // Creo las listas de productos para mostrar al usuario.
                 Categoria dos = SinDuplicados[1];
                 List<Producto> paraCategoriaDos = new List<Producto>();
                 foreach (Producto unProd2 in Comercio.Instancia.traerProductos())
@@ -138,12 +138,12 @@ public partial class Recomendaciones : System.Web.UI.Page
                     }
 
                 }
-                //Bindeo las listas de productos obtenidas.
+                // Bindeo las listas de productos obtenidas.
                 this.gvProductos2.DataSource = paraCategoriaDos;
                 this.gvProductos2.DataBind();
                 if (cantidadElementos >= 3)
                 {
-                    //Creo las listas de productos para mostrar al usuario.
+                    // Creo las listas de productos para mostrar al usuario.
                     Categoria tres = SinDuplicados[2];
                     List<Producto> paraCategoriaTres = new List<Producto>();
                     foreach (Producto unProd3 in Comercio.Instancia.traerProductos())
@@ -154,7 +154,7 @@ public partial class Recomendaciones : System.Web.UI.Page
                         }
 
                     }
-                    //Bindeo las listas de productos obtenidas.
+                    // Bindeo las listas de productos obtenidas.
                     this.gvProductos3.DataSource = paraCategoriaTres;
                     this.gvProductos3.DataBind();
                 }

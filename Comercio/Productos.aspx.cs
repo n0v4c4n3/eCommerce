@@ -17,7 +17,7 @@ public partial class Productos : System.Web.UI.Page
         if ((Usuario.TipoUsuario)Session["Type"] == Usuario.TipoUsuario.Visitante)
         {
             this.Master.LblMensaje.Text = "Acuerdate que necesitas registrarte para reservar productos en el carrito.";
-            //Sino me podrian reservar productos todos los visitantes que entren!!!.
+            // Sino me podrian reservar productos todos los visitantes que entren!!!.
         }
     }
     protected void gvProductos_RowCommand(object sender, GridViewCommandEventArgs e)

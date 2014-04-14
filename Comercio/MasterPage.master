@@ -9,8 +9,7 @@
     </asp:ContentPlaceHolder>
     <style type="text/css">
         html {
-            /*If you had a black or close to black background*/
-            background-color: #003366;
+            background-color: #003366; /*Mismo color que el body por las dudas.*/
         }
 
         body {
@@ -21,13 +20,15 @@
         #wrapper {
             position: relative;
             width: 850px;
-            min-height: 0 auto;
+            min-height: 0 auto; /*Por alguna razon sale que no es CSS valido pero funciona =).*/
             margin: auto;
             background-color: white;
         }
     </style>
     <script type="text/javascript" src="js/jquery-2.0.2.js"></script>
     <script type="text/javascript">
+        // Efecto de fadein y fadeout usando JQuery.
+        // Lo prove en FIREFOX y IE. Nose si en CHROME funciona pero deberia...
         $(document).ready(function () {
             $("body").css("display", "none");
 
@@ -53,7 +54,7 @@
                     <asp:Image ID="Image1" runat="server" BackColor="Yellow" Height="30px" ImageUrl="~/Image/Logo.png" />
                     <asp:Label ID="Label8" runat="server" BackColor="Yellow" Font-Bold="True" Font-Names="Verdana" Font-Size="X-Large" ForeColor="#284E98" Text="Comercio.com"></asp:Label>
                     <br />
-                    <asp:Menu ID="Menu1" runat="server" BackColor="Yellow" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="Small" ForeColor="#284E98" Orientation="Horizontal" StaticSubMenuIndent="10px" Font-Bold="True">
+                    <asp:Menu ID="Menu1" runat="server" BackColor="Yellow" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="9pt" ForeColor="#284E98" Orientation="Horizontal" StaticSubMenuIndent="10px" Font-Bold="True">
                         <DynamicHoverStyle BackColor="#284E98" ForeColor="White" />
                         <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
                         <DynamicMenuStyle BackColor="#B5C7DE" />
@@ -62,27 +63,30 @@
                             <asp:MenuItem Text="Alta Cliente" Value="Alta Cliente" NavigateUrl="~/AltaCliente.aspx"></asp:MenuItem>
                             <asp:MenuItem Text="| Compras" Value="Compras ">
                                 <asp:MenuItem NavigateUrl="~/Productos.aspx" Text="Agregar productos" Value="Agregar productos"></asp:MenuItem>
-                                <asp:MenuItem Text="Realizar pedido" Value="Realizar pedido" NavigateUrl="~/RealizarPedido.aspx"></asp:MenuItem>
-                                <asp:MenuItem Text="Recomendaciones" Value="Recomendaciones" NavigateUrl="~/Recomendaciones.aspx"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/RealizarPedido.aspx" Text="Realizar pedido" Value="Realizar pedido"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Recomendaciones.aspx" Text="Recomendaciones" Value="Recomendaciones"></asp:MenuItem>
                                 <asp:MenuItem NavigateUrl="~/PedidosUsuario.aspx" Text="Mis pedidos" Value="Mis pedidos"></asp:MenuItem>
                             </asp:MenuItem>
                             <asp:MenuItem Text="| Tareas (Admin)" Value="Tareas (Admin)">
                                 <asp:MenuItem NavigateUrl="~/AltaCategoria.aspx" Text="Alta categoria" Value="Alta categoria"></asp:MenuItem>
                                 <asp:MenuItem NavigateUrl="~/AltaProducto.aspx" Text="Alta producto" Value="Alta producto"></asp:MenuItem>
-                                <asp:MenuItem Text="Banear usuario" Value="Banear usuario" NavigateUrl="~/BanearUsuario.aspx"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/BanearUsuario.aspx" Text="Banear usuario" Value="Banear usuario"></asp:MenuItem>
                                 <asp:MenuItem NavigateUrl="~/DesbanearUsuario.aspx" Text="Desbanear usuario" Value="Desbanear usuario"></asp:MenuItem>
                             </asp:MenuItem>
                             <asp:MenuItem Text="| Tareas (Gerente)" Value="Tareas (Gerente)">
                                 <asp:MenuItem NavigateUrl="~/ListaDeUsuarios.aspx" Text="Lista de usuarios" Value="Lista de usuarios "></asp:MenuItem>
-                                <asp:MenuItem Text="Monto total entre dos fechas" Value="Monto total entre dos fechas" NavigateUrl="~/Montos.aspx"></asp:MenuItem>
-                                <asp:MenuItem Text="Productos venta menor entre dos fechas" Value="Productos venta menor entre dos fechas" NavigateUrl="~/VentaMenor.aspx"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Montos.aspx" Text="Monto total entre dos fechas" Value="Monto total entre dos fechas"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/VentaMenor.aspx" Text="Productos venta menor entre dos fechas" Value="Productos venta menor entre dos fechas"></asp:MenuItem>
                             </asp:MenuItem>
-                            <asp:MenuItem Text="| Tareas (JefeDeDeposito" Value="Tareas (JefeDeDeposito)">
-                                <asp:MenuItem Text="Reponer stock" Value="Reponer stock" NavigateUrl="~/ReponerStock.aspx"></asp:MenuItem>
+                            <asp:MenuItem Text="| Tareas (JefeDeDeposito)" Value="Tareas (JefeDeDeposito)">
+                                <asp:MenuItem NavigateUrl="~/ReponerStock.aspx" Text="Reponer stock" Value="Reponer stock"></asp:MenuItem>
                                 <asp:MenuItem NavigateUrl="~/ListaDePedidos.aspx" Text="Listado de pedidos" Value="Listado de pedidos"></asp:MenuItem>
                             </asp:MenuItem>
-                            <asp:MenuItem Text="| Log in" Value="Log in" NavigateUrl="~/LogIn.aspx"></asp:MenuItem>
-                            <asp:MenuItem NavigateUrl="~/LogOut.aspx" Text="| Log out " Value="Log out "></asp:MenuItem>
+                            <asp:MenuItem Text="| Tareas (Usuarios)" Value="| Tareas (Usuarios)">
+                                <asp:MenuItem NavigateUrl="~/ModificarDatos.aspx" Text="Modificar datos" Value="Modificar datos"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="( Log in )" Value="Log in" NavigateUrl="~/LogIn.aspx"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/LogOut.aspx" Text="( Log out )" Value="Log out "></asp:MenuItem>
                         </Items>
                         <StaticHoverStyle BackColor="#284E98" ForeColor="White" />
                         <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />

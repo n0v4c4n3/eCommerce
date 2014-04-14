@@ -51,7 +51,7 @@
     &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="El campo &quot;Direccion de envio&quot; no puede estar vacio." ControlToValidate="txtDireccionEnvio" ValidationGroup="groupAltaCliente">(Campo &quot;Direccion de envio&quot; es obligatorio)</asp:RequiredFieldValidator>
     <p>
         <asp:Label ID="Label8" runat="server" ForeColor="Red" Text="*Para ingresar varias direcciones de envio, separelas por coma sin espacio."></asp:Label>
-        </br>
+        <br/>
         <asp:Label ID="Label11" runat="server" Text="*Ej.: &quot;Pereira 1311,Uruguay 4564&quot;." ForeColor="Red"></asp:Label>
     </p>
     <p>
@@ -60,5 +60,6 @@
     </p>
     <p>
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="groupAltaCliente" />
+    </p>
 </asp:Content>
 

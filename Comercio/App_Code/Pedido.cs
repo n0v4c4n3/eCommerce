@@ -11,12 +11,12 @@ public class Pedido
     #region Atributos
     private int mCodPedido;
     private static int mUltCod;
-    private bool mEstado; //Pendiente = false | Enviado = true    
+    private bool mEstado; // Pendiente = false | Enviado = true    
     private List<Producto> mColProductos;
     private DateTime mFecha;
     private String mDireccionEnvio;
     private Decimal mMonto;
-    private bool mCancelado; //Pendiente = false | Cancelado = true    
+    private bool mCancelado; // Pendiente = false | Cancelado = true    
     #endregion
     #region Propiedades
     public int CodPedido

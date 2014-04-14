@@ -22,9 +22,9 @@ public partial class Montos : System.Web.UI.Page
     protected void btnCalcular_Click(object sender, EventArgs e)
     {
         string fechaInicial = this.txtFechaInicial.Text;
-        //DateTime dateInicial = Convert.ToDateTime(fechaInicial);
+        // DateTime dateInicial = Convert.ToDateTime(fechaInicial);
         string fechaTope = this.txtFechaTope.Text;
-        //DateTime dateTope = Convert.ToDateTime(fechaTope);
+        // DateTime dateTope = Convert.ToDateTime(fechaTope);
         List<Pedido> auxPedidos = Comercio.Instancia.traerPedidos();
         Decimal monto = new Decimal();
         DateTime auxFechaInicial;
@@ -37,7 +37,7 @@ public partial class Montos : System.Web.UI.Page
                 {
                     foreach (Pedido unPedido in auxPedidos)
                     {
-                        if (unPedido.Estado == true && unPedido.Cancelado == false) //No calculo si el pedido no fue enviado o si esta cancelado.
+                        if (unPedido.Estado == true && unPedido.Cancelado == false) // No calculo si el pedido no fue enviado o si esta cancelado.
                         {
                             DateTime auxDate = Convert.ToDateTime(unPedido.Fecha);
                             if (auxDate >= auxFechaInicial && auxDate <= auxFechaTope)

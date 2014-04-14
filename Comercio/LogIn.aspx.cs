@@ -44,12 +44,12 @@ public partial class LogIn : System.Web.UI.Page
             }
             else
             {
-                this.Master.LblMensaje.Text = "El user o la password no son correctos."; //Por Password
+                this.Master.LblMensaje.Text = "El user o la password no son correctos."; // Por Password
             }
         }
         else
         {
-            this.Master.LblMensaje.Text = "El user o la password no son correctos."; //Por Usuario
+            this.Master.LblMensaje.Text = "El user o la password no son correctos."; // Por Usuario
         }
 
     }

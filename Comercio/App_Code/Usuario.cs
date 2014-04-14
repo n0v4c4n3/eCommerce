@@ -96,11 +96,11 @@ public class Usuario
     #region Metodos
     public enum TipoUsuario
     {
-        Admin, //Hace todo
-        Gerente, //Confirma el pedido para enviar, compra
-        JefeDeDeposito, //Actualiza stock, compra
-        Cliente, // Compra
-        Visitante // Agrega al carrita, registra, login
+        Admin, 
+        Gerente, 
+        JefeDeDeposito, 
+        Cliente, 
+        Visitante 
     }
     public enum ErroresUsuario
     {
