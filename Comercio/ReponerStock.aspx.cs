@@ -31,16 +31,15 @@ public partial class ReponerStock : System.Web.UI.Page
             GridViewRow row = gvProductos.Rows[index];
             TableCell celdaNombreProd = row.Cells[1];
             string textNombreProd = celdaNombreProd.Text;
-           TextBox txtItemDescription = (TextBox)gvProductos.Rows[index].Cells[6].FindControl("txtCantidad"); 
+            TextBox txtItemDescription = (TextBox)gvProductos.Rows[index].Cells[6].FindControl("txtCantidad");
             string textCantidad = txtItemDescription.Text;
-                int auxCantidad;
-                if (Int32.TryParse(textCantidad, out auxCantidad))
-                {
-                    Comercio.Instancia.agregarStock(textNombreProd, auxCantidad);
-                    this.Master.LblMensaje.Text = "Se agrego la cantidad " + textCantidad + " a producto: " + textNombreProd + ".";
-                    cargarGridView();
-                }
-            
+            int auxCantidad;
+            if (Int32.TryParse(textCantidad, out auxCantidad))
+            {
+                Comercio.Instancia.agregarStock(textNombreProd, auxCantidad);
+                this.Master.LblMensaje.Text = "Se agrego la cantidad " + textCantidad + " a producto: " + textNombreProd + ".";
+                cargarGridView();
+            }
         }
     }
     private void cargarGridView()
