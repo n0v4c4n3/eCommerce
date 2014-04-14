@@ -33,12 +33,22 @@
         resultUsuario = aux.altaUsuario("JefeDeDeposito@comercio.com", auxPass, "18 De Julio 5112", dir2, Usuario.TipoUsuario.JefeDeDeposito);
         resultUsuario = aux.altaUsuario("Gerente@comercio.com", auxPass, "Pereira 1546", dir3, Usuario.TipoUsuario.Gerente);
         resultUsuario = aux.altaUsuario("Admin@comercio.com", auxPass, "Street 1818", dir4, Usuario.TipoUsuario.Admin);
-        resultUsuario = aux.altaUsuario("Visitante@comercio.com", auxPass, "Artigas 4123", dir5, Usuario.TipoUsuario.Visitante);
+        resultUsuario = aux.altaUsuario("Visitante@comercio.com", auxPass, "Artigas 4123", dir5, Usuario.TipoUsuario.Visitante); // No hace nada.
         resultUsuario = aux.altaUsuario("Inactivo@comercio.com", auxPass, "Bogota 4453", dir6, Usuario.TipoUsuario.Cliente);
-        resultUsuario = aux.altaUsuario("Baneado@comercio.com", auxPass, "Infierno 153", dir7, Usuario.TipoUsuario.Cliente);
-        //Inactivos
-        Usuario aInactivar = Comercio.Instancia.buscarUsuarioXUser("Inactivo@comercio.com");
-        aInactivar.Inactivo = true;
+        resultUsuario = aux.altaUsuario("Baneado@comercio.com", auxPass, "Infierno 153", dir7, Usuario.TipoUsuario.Cliente); // Activo pero baneado.
+        //Usuarios activos
+        Usuario activarCliente = Comercio.Instancia.buscarUsuarioXUser("Cliente@comercio.com");
+        activarCliente.Inactivo = false;
+        Usuario activarJefeDeDeposito = Comercio.Instancia.buscarUsuarioXUser("JefeDeDeposito@comercio.com");
+        activarJefeDeDeposito.Inactivo = false;
+        Usuario activarGerente = Comercio.Instancia.buscarUsuarioXUser("Gerente@comercio.com");
+        activarGerente.Inactivo = false;
+        Usuario activarAdmin = Comercio.Instancia.buscarUsuarioXUser("Admin@comercio.com");
+        activarAdmin.Inactivo = false;
+        Usuario activarVisitante = Comercio.Instancia.buscarUsuarioXUser("Visitante@comercio.com");
+        activarVisitante.Inactivo = false;
+        Usuario activarBaneado = Comercio.Instancia.buscarUsuarioXUser("Baneado@comercio.com");
+        activarBaneado.Inactivo = false;
         //Baneados
         Usuario aBanear = Comercio.Instancia.buscarUsuarioXUser("Baneado@comercio.com");
         aBanear.Ban = true;

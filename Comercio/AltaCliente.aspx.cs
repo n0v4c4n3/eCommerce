@@ -29,7 +29,7 @@ public partial class AltaCliente : System.Web.UI.Page
             Usuario.ErroresUsuario resultAltaCliente = Comercio.Instancia.altaUsuario(this.txtUser.Text, encryptedstring, this.txtDireccionFacturacion.Text, resultDireccionEnvio, Usuario.TipoUsuario.Cliente);
             if (resultAltaCliente == Usuario.ErroresUsuario.OK)
             {
-                this.Master.LblMensaje.Text = "Alta de cliente exitosa!";
+                this.Master.LblMensaje.Text = "Alta de cliente exitosa!, un gerente te activara lo antes posible.";
             }
             if (resultAltaCliente == Usuario.ErroresUsuario.Nombre_de_usuario_ya_existente)
             {

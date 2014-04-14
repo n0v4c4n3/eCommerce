@@ -23,6 +23,22 @@
         </Columns>
         <HeaderStyle BackColor="Yellow" ForeColor="#284E98" />
     </asp:GridView>
-    <p></p>
+    <p>
+        <asp:Label ID="Label10" runat="server" Text="Usuario a activar: " Font-Bold="True" ForeColor="#284E98"></asp:Label>
+        <asp:TextBox ID="txtActivar" runat="server"></asp:TextBox>
+&nbsp;<asp:Button ID="btnActivar" runat="server" OnClick="btnActivar_Click" Text="Activar" />
+    </p>
+    <p>
+        <asp:Label ID="Label12" runat="server" ForeColor="Red" Text="*Se le permitira entrar al sitio."></asp:Label><br/>
+        <asp:Label ID="Label14" runat="server" Text="*Tenga en cuenta que si el admin lo baneo, ese usuario no podra entrar aunque usted lo active." ForeColor="Red"></asp:Label>     
+    </p>
+    <p>
+        <asp:Label ID="Label11" runat="server" Text="Usuario inactivar: " Font-Bold="True" ForeColor="#284E98"></asp:Label>
+        <asp:TextBox ID="txtInactivar" runat="server"></asp:TextBox>
+&nbsp;<asp:Button ID="btnInactivar" runat="server" OnClick="btnInactivar_Click" Text="Inactivar" />
+    </p>
+    <p>
+        <asp:Label ID="Label13" runat="server" ForeColor="Red" Text="*No se le permitira entrar al sitio."></asp:Label>
+    </p>
 </asp:Content>
 

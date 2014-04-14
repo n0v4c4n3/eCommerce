@@ -16,10 +16,9 @@ public class Usuario
     private List<Pedido> mColPedidos = new List<Pedido>();
     private List<Producto> mCarrito = new List<Producto>();
     private Usuario.TipoUsuario mTipo;
-    private List<Categoria> mCategoriasRecom;
     private int mCod;
     private static int mUltCod;
-    private bool mInactivo;
+    private bool mInactivo = true;
     private bool mBan;     
     #endregion
     #region Propiedades
@@ -58,11 +57,6 @@ public class Usuario
         get { return mTipo; }
         set { mTipo = value; }
     }
-    public List<Categoria> CategoriasRecom
-    {
-        get { return mCategoriasRecom; }
-        set { mCategoriasRecom = value; }
-    }
     public bool Inactivo
     {
         get { return mInactivo; }
@@ -87,9 +81,7 @@ public class Usuario
         this.User = pUser;
         this.Password = pPassword;
         this.DireccionFacturacion = pDirecionFacturacion;
-        this.DireccionEnvio = pDireccionEnvio;
-        this.CategoriasRecom = new List<Categoria>();
-        this.Inactivo = false;
+        this.DireccionEnvio = pDireccionEnvio;              
         this.Tipo = pTipo;
     }
     #endregion

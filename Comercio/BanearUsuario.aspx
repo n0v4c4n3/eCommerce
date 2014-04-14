@@ -13,7 +13,7 @@
         <asp:Button ID="btnBanear" runat="server" Text="Banear" OnClick="btnBanear_Click" />
     </p>
     <p>
-        <asp:Label ID="Label2" runat="server" Text="*Esto evitara que el usuario ingrese al sitio y lo marcara como baneado." ForeColor="Red"></asp:Label>
+        <asp:Label ID="Label2" runat="server" Text="*Esto evitara que el usuario ingrese al sitio, sin importar si un gerente lo activa para ingresar." ForeColor="Red"></asp:Label>
     </p>
 </asp:Content>
 

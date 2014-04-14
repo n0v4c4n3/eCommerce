@@ -27,6 +27,10 @@
         <asp:Button ID="btnCalcular" runat="server" Text="Calcular" OnClick="btnCalcular_Click" />
     </p>
     <p>
+        <asp:Label ID="Label1" runat="server" ForeColor="Red" Text="*El calculo solo tendra en cuenta los pedidos marcados como enviados."></asp:Label> <br />
+        <asp:Label ID="Label15" runat="server" ForeColor="Red" Text="*Los pedidos cancelados y/o pendientes no."></asp:Label>
+    </p>
+    <p>
         <asp:Label ID="Label14" runat="server" Text="Resultado: $" Font-Bold="True" ForeColor="#284E98"></asp:Label>
         <asp:Label ID="lblMonto" runat="server" BorderColor="Yellow" BorderStyle="Double" BorderWidth="5px" Font-Bold="True" ForeColor="#FF3300"></asp:Label>
     </p>

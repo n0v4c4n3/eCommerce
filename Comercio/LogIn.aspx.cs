@@ -22,22 +22,29 @@ public partial class LogIn : System.Web.UI.Page
                 Usuario aux = Comercio.Instancia.loguear(this.txtUser.Text, encryptedString);
                 if (aux != null)
                 {
-                    if (aux.Ban == false)
+                    if (aux.Inactivo == false)
                     {
-                        Session["Logged"] = true;
-                        Session["User"] = aux.User;
-                        Session["Type"] = aux.Tipo;
-                        Session["Carrito"] = aux.Carrito;
+                        if (aux.Ban == false)
+                        {
+                            Session["Logged"] = true;
+                            Session["User"] = aux.User;
+                            Session["Type"] = aux.Tipo;
+                            Session["Carrito"] = aux.Carrito;
 
-                        Application.Lock();
-                        Application["Loggeds"] = (int)Application["Loggeds"] + 1;
-                        Application.UnLock();
-                        this.Master.LblMensaje.Text = "Te has conectado!, redireccionando...";
-                        Response.AddHeader("Refresh", "2;URL=Ini.aspx");
+                            Application.Lock();
+                            Application["Loggeds"] = (int)Application["Loggeds"] + 1;
+                            Application.UnLock();
+                            this.Master.LblMensaje.Text = "Te has conectado!, redireccionando...";
+                            Response.AddHeader("Refresh", "2;URL=Ini.aspx");
+                        }
+                        else
+                        {
+                            this.Master.LblMensaje.Text = "Tu usuario: " + aux.User + " fue baneado por el administrador.";
+                        }
                     }
                     else
                     {
-                        this.Master.LblMensaje.Text = "Tu usuario: " + aux.User + " fue baneado por el administrador.";
+                        this.Master.LblMensaje.Text = "Tu usario esta inactivo.";
                     }
                 }
 

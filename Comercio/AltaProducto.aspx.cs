@@ -48,7 +48,14 @@ public partial class AltaProducto : System.Web.UI.Page
                         if (Decimal.TryParse(this.txtPrecio.Text, out auxPrecio))
                         {
                             Producto.ErroresProducto resultado = Comercio.Instancia.altaProducto(selected, this.txtNombreProd.Text, auxStock, auxStockMin, textImagen, auxPrecio);
-                            this.Master.LblMensaje.Text = "Se dio de alta al producto.";
+                            if (resultado == Producto.ErroresProducto.OK)
+                            {
+                                this.Master.LblMensaje.Text = "Se dio de alta al producto.";
+                            }
+                            if (resultado == Producto.ErroresProducto.Nombre_de_producto_ya_existente)
+                            {
+                                this.Master.LblMensaje.Text = "Ese nombre de producto ya existe.";
+                            }
                         }
                     }
                 }

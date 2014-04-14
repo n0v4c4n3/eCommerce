@@ -74,7 +74,7 @@
                                 <asp:MenuItem NavigateUrl="~/DesbanearUsuario.aspx" Text="Desbanear usuario" Value="Desbanear usuario"></asp:MenuItem>
                             </asp:MenuItem>
                             <asp:MenuItem Text="| Tareas (Gerente)" Value="Tareas (Gerente)">
-                                <asp:MenuItem NavigateUrl="~/ListaDeUsuarios.aspx" Text="Lista de usuarios" Value="Lista de usuarios "></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/ListaDeUsuarios.aspx" Text="Lista de usuarios, activar/inactivar" Value="Lista de usuarios "></asp:MenuItem>
                                 <asp:MenuItem NavigateUrl="~/Montos.aspx" Text="Monto total entre dos fechas" Value="Monto total entre dos fechas"></asp:MenuItem>
                                 <asp:MenuItem NavigateUrl="~/VentaMenor.aspx" Text="Productos venta menor entre dos fechas" Value="Productos venta menor entre dos fechas"></asp:MenuItem>
                             </asp:MenuItem>
