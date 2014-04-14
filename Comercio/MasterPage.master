@@ -84,6 +84,7 @@
                             </asp:MenuItem>
                             <asp:MenuItem Text="| Tareas (Usuarios)" Value="| Tareas (Usuarios)">
                                 <asp:MenuItem NavigateUrl="~/ModificarDatos.aspx" Text="Modificar datos" Value="Modificar datos"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/Inactivar.aspx" Text="Inactivar cuenta" Value="Inactivar cuenta"></asp:MenuItem>
                             </asp:MenuItem>
                             <asp:MenuItem Text="( Log in )" Value="Log in" NavigateUrl="~/LogIn.aspx"></asp:MenuItem>
                             <asp:MenuItem NavigateUrl="~/LogOut.aspx" Text="( Log out )" Value="Log out "></asp:MenuItem>
