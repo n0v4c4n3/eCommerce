@@ -1901,6 +1901,7 @@
 <XPD:ATTR name="#Connections" type="integer">2</XPD:ATTR>
 <XPD:OBJ name="Connections[0]" type="UMLAssociationEnd" guid="k1KlBxkutUelMQPc52RU9QAA">
 <XPD:ATTR name="IsNavigable" type="boolean">False</XPD:ATTR>
+<XPD:ATTR name="Aggregation" type="UMLAggregationKind">akAggregate</XPD:ATTR>
 <XPD:REF name="Association">5FXarcT7Kki8SDMI6BlMCQAA</XPD:REF>
 <XPD:REF name="Participant">FrZjvjJrZ0ytQPf994iR5AAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>

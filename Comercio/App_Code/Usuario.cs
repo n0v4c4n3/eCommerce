@@ -67,6 +67,11 @@ public class Usuario
         get { return mBan; }
         set { mBan = value; }
     }
+    public int Cod
+    {
+        get { return mCod; }
+        set { mCod = value; }
+    }
     #endregion
     #region Constructores
     public Usuario()

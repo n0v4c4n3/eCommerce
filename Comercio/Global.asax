@@ -11,7 +11,7 @@
         Application.UnLock();
 
         Comercio aux = Comercio.Instancia;
-        Usuario.ErroresUsuario resultUsuario;       
+        Usuario.ErroresUsuario resultUsuario;
         Categoria.ErroresCategoria resultCategoria;
         Producto.ErroresProducto resultProducto;
         int resultPedido1;
@@ -22,27 +22,27 @@
         List<string> dir1 = ("Bogota 3480,Rio 852").Split(',').ToList();
         List<string> dir2 = ("Wallstreet 56,St. German 452,Calle No.5").Split(',').ToList();
         List<string> dir3 = ("Roxlo 1246,Indio Solari 65,Ricota 32").Split(',').ToList();
-        List<string> dir4 = ("La Dolce Vita 246,Vía Veneto 2358,Peron 34534").Split(',').ToList();
-        List<string> dir5 = ("Uruguay 1950,Brazil 2014,RuffRaff 5248,Vamos 876").Split(',').ToList();
+        List<string> dir4 = ("Rocha 223,Veneto 2358,Peron 34534").Split(',').ToList();
+        List<string> dir5 = ("Uruguay 1950,Brazil 2014,SDF 5248,Paris 876").Split(',').ToList();
         List<string> dir6 = ("BSOD 55,49 Street,America 786,Call 456").Split(',').ToList();
         //Passwords
         string auxPass = StringCipher.Encrypt("1234", "mkJcqDqU");
         //Usuarios
-        resultUsuario = aux.altaUsuario("Cliente@comercio.com", auxPass, "26 De Marzo 4531", dir1, Usuario.TipoUsuario.Cliente);
-        resultUsuario = aux.altaUsuario("JefeDeDeposito@comercio.com", auxPass, "18 De Julio 5112", dir2, Usuario.TipoUsuario.JefeDeDeposito);
-        resultUsuario = aux.altaUsuario("Gerente@comercio.com", auxPass, "Pereira 1546", dir3, Usuario.TipoUsuario.Gerente);
-        resultUsuario = aux.altaUsuario("Admin@comercio.com", auxPass, "Street 1818", dir4, Usuario.TipoUsuario.Admin);
+        resultUsuario = aux.altaUsuario("Admin@comercio.com", auxPass, "Street 1818", dir1, Usuario.TipoUsuario.Admin);
+        resultUsuario = aux.altaUsuario("Gerente@comercio.com", auxPass, "Pereira 1546", dir2, Usuario.TipoUsuario.Gerente);
+        resultUsuario = aux.altaUsuario("JefeDeDeposito@comercio.com", auxPass, "18 De Julio 5112", dir3, Usuario.TipoUsuario.JefeDeDeposito);
+        resultUsuario = aux.altaUsuario("Cliente@comercio.com", auxPass, "26 De Marzo 4531", dir4, Usuario.TipoUsuario.Cliente);
         resultUsuario = aux.altaUsuario("Inactivo@comercio.com", auxPass, "Bogota 4453", dir5, Usuario.TipoUsuario.Cliente);
         resultUsuario = aux.altaUsuario("Baneado@comercio.com", auxPass, "Infierno 153", dir6, Usuario.TipoUsuario.Cliente); // Activo pero baneado.
         //Usuarios activos
-        Usuario activarCliente = Comercio.Instancia.buscarUsuarioXUser("Cliente@comercio.com");
-        activarCliente.Inactivo = false;
-        Usuario activarJefeDeDeposito = Comercio.Instancia.buscarUsuarioXUser("JefeDeDeposito@comercio.com");
-        activarJefeDeDeposito.Inactivo = false;
-        Usuario activarGerente = Comercio.Instancia.buscarUsuarioXUser("Gerente@comercio.com");
-        activarGerente.Inactivo = false;
         Usuario activarAdmin = Comercio.Instancia.buscarUsuarioXUser("Admin@comercio.com");
         activarAdmin.Inactivo = false;
+        Usuario activarGerente = Comercio.Instancia.buscarUsuarioXUser("Gerente@comercio.com");
+        activarGerente.Inactivo = false;
+        Usuario activarJefeDeDeposito = Comercio.Instancia.buscarUsuarioXUser("JefeDeDeposito@comercio.com");
+        activarJefeDeDeposito.Inactivo = false;
+        Usuario activarCliente = Comercio.Instancia.buscarUsuarioXUser("Cliente@comercio.com");
+        activarCliente.Inactivo = false;
         Usuario activarBaneado = Comercio.Instancia.buscarUsuarioXUser("Baneado@comercio.com");
         activarBaneado.Inactivo = false;
         //Baneados
@@ -116,7 +116,7 @@
         Pedido pedido3 = Comercio.Instancia.buscarPedidoXCodPedido(3);
         Pedido pedido4 = Comercio.Instancia.buscarPedidoXCodPedido(4);
         usu2.ColPedidos.Add(pedido3);
-        usu2.ColPedidos.Add(pedido4);        
+        usu2.ColPedidos.Add(pedido4);
     }
 
     void Application_End(object sender, EventArgs e)
