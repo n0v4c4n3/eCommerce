@@ -10,7 +10,6 @@
     <style type="text/css">
         body {
             background-color: #003366;
-            background-image: url('../Image/Background.png');
         }
 
         #wrapper {
@@ -21,53 +20,23 @@
             background-color: white;
         }
     </style>
-    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
-    <script type='text/javascript' src='js/jquery.ba-hashchange.min.js'></script>
-    <script type='text/javascript' src='js/dynamicpage.js'></script>
+    <script type="text/javascript" src="js/jquery-1.4.1.min.js"></script>
     <script type="text/javascript">
-        $(function () {
+        $(document).ready(function () {
+            $("body").css("display", "none");
 
-            var newHash = "",
-                $mainContent = $("#main-content"),
-                $pageWrap = $("#page-wrap"),
-                baseHeight = 0,
-                $el;
+            $("body").fadeIn(500);
 
-            $pageWrap.height($pageWrap.height());
-            baseHeight = $pageWrap.height() - $mainContent.height();
-
-            $("nav").delegate("a", "click", function () {
-                window.location.hash = $(this).attr("href");
-                return false;
+            $("a.transition").click(function (event) {
+                event.preventDefault();
+                linkLocation = this.href;
+                $("body").fadeOut(500, redirectPage);
             });
 
-            $(window).bind('hashchange', function () {
-
-                newHash = window.location.hash.substring(1);
-
-                if (newHash) {
-                    $mainContent
-                        .find("#guts")
-                        .fadeOut(200, function () {
-                            $mainContent.hide().load(newHash + " #guts", function () {
-                                $mainContent.fadeIn(200, function () {
-                                    $pageWrap.animate({
-                                        height: baseHeight + $mainContent.height() + "px"
-                                    });
-                                });
-                                $("nav a").removeClass("current");
-                                $("nav a[href='" + newHash + "']").addClass("current");
-                            });
-                        });
-                };
-
-            });
-
-            $(window).trigger('hashchange');
-
+            function redirectPage() {
+                window.location = linkLocation;
+            }
         });
-
-
     </script>
 </head>
 <body>
@@ -96,7 +65,7 @@
                             </asp:MenuItem>
                             <asp:MenuItem Text="| Tareas (Gerente)" Value="Tareas (Gerente)">
                                 <asp:MenuItem NavigateUrl="~/ListaDeUsuarios.aspx" Text="Lista de usuarios" Value="Lista de usuarios "></asp:MenuItem>
-                                <asp:MenuItem Text="Monto entre dos fechas" Value="Monto entre dos fechas" NavigateUrl="~/Montos.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="Monto total entre dos fechas" Value="Monto total entre dos fechas" NavigateUrl="~/Montos.aspx"></asp:MenuItem>
                                 <asp:MenuItem Text="Productos venta menor entre dos fechas" Value="Productos venta menor entre dos fechas"></asp:MenuItem>
                             </asp:MenuItem>
                             <asp:MenuItem Text="| Tareas (JefeDeDeposito" Value="Tareas (JefeDeDeposito)">

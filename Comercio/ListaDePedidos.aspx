@@ -23,7 +23,7 @@
         <HeaderStyle BackColor="Yellow" ForeColor="#284E98" />
     </asp:GridView>
     <p>
-        <asp:Label ID="Label10" runat="server" Text="Codigo de pedido enviado:  " Font-Bold="True" ForeColor="#003366"></asp:Label>
+        <asp:Label ID="Label10" runat="server" Text="Codigo de pedido enviado:  " Font-Bold="True" ForeColor="#284E98"></asp:Label>
         <asp:TextBox ID="txtCodigoEnviado" runat="server"></asp:TextBox>
         &nbsp;<asp:Button ID="btnCodigoEnviado" runat="server" Text="Enviado" OnClick="btnCodigoEnviado_Click" />
     </p>

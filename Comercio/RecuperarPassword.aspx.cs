@@ -9,13 +9,21 @@ public partial class RecuperarPassword : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (!this.IsPostBack)
+        {
+            if (!string.IsNullOrEmpty(Request.QueryString["user"]))
+            {
+                string toTxtUser = Request.QueryString["user"].ToString();
+                this.lblUser.Text = toTxtUser;
+            }        
+        }
     }
     protected void Button1_Click(object sender, EventArgs e)
     {
-        string user = this.txtUser.Text;
+        string user = this.lblUser.Text;
         string dirEnvio = this.txtDirEnvio.Text;
         Usuario usuarioBuscado = Comercio.Instancia.buscarUsuarioXUser(user);
+
         if (usuarioBuscado != null)
         {
             foreach (string unaDirEnvio in usuarioBuscado.DireccionEnvio)

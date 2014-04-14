@@ -12,13 +12,13 @@
         <asp:Label ID="Label11" runat="server" Text="Monto total entre dos fechas: "></asp:Label>
     </p>
     <p>
-        <asp:Label ID="Label12" runat="server" Text="Fecha inical: "></asp:Label>
+        <asp:Label ID="Label12" runat="server" Text="Fecha inical: " Font-Bold="True" ForeColor="#284E98"></asp:Label>
         <asp:TextBox ID="txtFechaInicial" runat="server"></asp:TextBox>
         <asp:CalendarExtender ID="txtFechaInicial_CalendarExtender" runat="server" TargetControlID="txtFechaInicial">
         </asp:CalendarExtender>
     </p>
     <p>
-        <asp:Label ID="Label13" runat="server" Text="Fecha tope: "></asp:Label>
+        <asp:Label ID="Label13" runat="server" Text="Fecha tope: " Font-Bold="True" ForeColor="#284E98"></asp:Label>
         <asp:TextBox ID="txtFechaTope" runat="server"></asp:TextBox>
         <asp:CalendarExtender ID="txtFechaTope_CalendarExtender" runat="server" TargetControlID="txtFechaTope">
         </asp:CalendarExtender>

@@ -39,26 +39,26 @@
     <p>
         <asp:Label ID="Label1" runat="server" Text="Ingrese los siguientes datos para dar de alta un producto:"></asp:Label>
     </p>
-    <asp:Label ID="Label2" runat="server" Text="Nombre: "></asp:Label>
+    <asp:Label ID="Label2" runat="server" Text="Nombre: " Font-Bold="True" ForeColor="#284E98"></asp:Label>
     <asp:TextBox ID="txtNombreProd" runat="server"></asp:TextBox>
     <br />
-    <asp:Label ID="Label8" runat="server" Text="Stock ini: "></asp:Label>
+    <asp:Label ID="Label8" runat="server" Text="Stock ini: " Font-Bold="True" ForeColor="#284E98"></asp:Label>
     <asp:TextBox ID="txtStock" runat="server"></asp:TextBox>
     &nbsp;<asp:CustomValidator ID="CustomValidator1" runat="server" ClientValidationFunction="validarTxtStock" ControlToValidate="txtStockMin" ErrorMessage="El campo &quot;Stock ini.&quot; debe ser un numero ni vacio." OnServerValidate="CustomValidator1_ServerValidate" ValidateEmptyText="True" ValidationGroup="groupAltaProducto">(Campo "Stock ini. debe ser un numero)</asp:CustomValidator>
     <br />
-    <asp:Label ID="Label9" runat="server" Text="Stock min: "></asp:Label>
+    <asp:Label ID="Label9" runat="server" Text="Stock min: " Font-Bold="True" ForeColor="#284E98"></asp:Label>
     <asp:TextBox ID="txtStockMin" runat="server"></asp:TextBox>
     &nbsp;<asp:CustomValidator ID="CustomValidator2" runat="server" ClientValidationFunction="validarTxtStockMin" ControlToValidate="txtStockMin" ErrorMessage="El campo &quot;Stock min.&quot; debe ser un numero ni vacio." OnServerValidate="CustomValidator2_ServerValidate" ValidateEmptyText="True" ValidationGroup="groupAltaProducto">(Campo "Stock min." debe ser un numero)</asp:CustomValidator>
     <br />
-    <asp:Label ID="Label10" runat="server" Text="Precio: "></asp:Label>
+    <asp:Label ID="Label10" runat="server" Text="Precio: " Font-Bold="True" ForeColor="#284E98"></asp:Label>
     <asp:TextBox ID="txtPrecio" runat="server"></asp:TextBox>
     &nbsp;<asp:CustomValidator ID="CustomValidator3" runat="server" ClientValidationFunction="validarTxtPrecio" ControlToValidate="txtPrecio" ErrorMessage="El campo &quot;Precio&quot; debe ser decimal ni vacio." OnServerValidate="CustomValidator3_ServerValidate" ValidateEmptyText="True" ValidationGroup="groupAltaProducto">(Campo "Precio" debe ser decimal)</asp:CustomValidator>
     <br />
-    <asp:Label ID="Label11" runat="server" Text="Categoria: "></asp:Label>
+    <asp:Label ID="Label11" runat="server" Text="Categoria: " Font-Bold="True" ForeColor="#284E98"></asp:Label>
     <asp:RadioButtonList ID="rblCategoria" runat="server">
     </asp:RadioButtonList>
     <br />
-    <asp:Label ID="Label12" runat="server" Text="Imagen: "></asp:Label>
+    <asp:Label ID="Label12" runat="server" Text="Imagen: " Font-Bold="True" ForeColor="#284E98"></asp:Label>
     <asp:FileUpload ID="fuImagen" runat="server" />
     <br />
     <p>
@@ -66,6 +66,5 @@
     </p>
     <p>
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="groupAltaProducto" />
-    </p>
-</asp:Content>
+    </asp:Content>
 

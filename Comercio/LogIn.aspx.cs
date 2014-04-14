@@ -45,4 +45,16 @@ public partial class LogIn : System.Web.UI.Page
         }
 
     }
+    protected void LinkButton1_Click(object sender, EventArgs e)
+    {
+        Usuario auxUsuario = Comercio.Instancia.buscarUsuarioXUser(this.txtUser.Text);
+        if (auxUsuario != null)
+        {
+            Response.Redirect("RecuperarPassword.aspx?user=" + this.txtUser.Text);
+        }
+        else
+        {
+            this.Master.LblMensaje.Text = "El user para recuperar password no existe.";
+        }
+    }
 }

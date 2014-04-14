@@ -9,7 +9,7 @@
     <p>
         <asp:Label ID="Label8" runat="server" Text="Ingrese el nombre de categoria que desea crear:"></asp:Label>
     </p>
-    <asp:Label ID="Label9" runat="server" Text="Nombre: "></asp:Label>
+    <asp:Label ID="Label9" runat="server" Text="Nombre: " Font-Bold="True" ForeColor="#284E98"></asp:Label>
     <asp:TextBox ID="txtNombreCat" runat="server"></asp:TextBox>
     &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtNombreCat" ErrorMessage="El campo &quot;Nombre&quot; no puede estar vacio." ValidationGroup="groupAltaCategoria">(Campo &quot;Nombre&quot; es obligaorio)</asp:RequiredFieldValidator>
     <p>
